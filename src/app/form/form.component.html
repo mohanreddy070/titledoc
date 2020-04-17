@@ -1,3 +1,61 @@
-<p>
-form works!
-</p>
+<div class="card">
+	<div class="card-header">
+		Title Trails
+	</div>
+
+	<div class="card-body">
+		<form novalidate (ngSubmit)="save()" [formGroup]="titleForm">
+
+			<!-- Primary Details -->
+			<div class="form-group row mb-2">
+				<label class="col-md-2 col-form-label"
+               for="orderNumberId">Order Number</label>
+				<div class="col-md-8">
+					<input class="form-control"
+                 id="orderNumberId"
+                 type="text"
+                 placeholder="Order Number (required)"
+                 formControlName="orderNumber"
+                 [ngClass]="{'is-invalid': (titleForm.get('orderNumber').touched ||
+                                            titleForm.get('orderNumber').dirty) &&
+                                            !titleForm.get('orderNumber').valid }" />
+					<span class="invalid-feedback">
+            <span *ngIf="titleForm.get('orderNumber').errors?.required">
+              Please enter your order Number.
+            </span>
+					</span>
+				</div>
+			</div>
+
+      <div class="form-group row mb-2">
+				<label class="col-md-2 col-form-label"
+               for="searchDateId">Search Date</label>
+				<div class="col-md-8">
+					<input class="form-control"
+                 id="searchDateId"
+                 type="date"
+                 placeholder="Search Date (required)"
+                 formControlName="searchDate"
+                 [ngClass]="{'is-invalid': (titleForm.get('searchDate').touched ||
+                                            titleForm.get('searchDate').dirty) &&
+                                            !titleForm.get('searchDate').valid }" />
+					<span class="invalid-feedback">
+            <span *ngIf="titleForm.get('searchDate').errors?.required">
+              Please enter your search date.
+            </span>
+					</span>
+				</div>
+			</div>
+
+
+
+
+		</form>
+	</div>
+</div>
+<br>Dirty: {{ titleForm.dirty }}
+<br>Touched: {{ titleForm.touched }}
+<br>Valid: {{ titleForm.valid }}
+<br>Value: {{ titleForm.value | json }}
+<br>Street: {{ addresses.get('0.street1')?.value }}
+<br>&nbsp;s
