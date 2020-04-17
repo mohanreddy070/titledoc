@@ -15,7 +15,7 @@ export class FormComponent implements OnInit {
   ngOnInit() {
     this.titleForm = this.fb.group({
       orderNumber: ['', [Validators.required, ]],
-      
+      searchDate: ['', [Validators.required, ]]
       
     });
   }
