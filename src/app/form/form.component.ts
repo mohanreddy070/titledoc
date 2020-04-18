@@ -38,12 +38,38 @@ export class FormComponent implements OnInit {
         })
       }),
       deed:this.fb.group({
+        deedtype: ["", [Validators.required]],
+        considerationAmount: ["", [Validators.required]],
+        grantor: ["", [Validators.required]],
+        grantee: ["", [Validators.required]],
+        vesting: ["", [Validators.required]],
+        iBP: ["", [Validators.required]],
+        datedDate: ["", [Validators.required]],
+        recordedDate: ["", [Validators.required]],
+        note: ["", [Validators.required]],
 
       }),
       mortgage:this.fb.group({
+        mortgagor: ["", [Validators.required]],
+        mortgagee: ["", [Validators.required]],
+        grantor: ["", [Validators.required]],
+        trustee: ["", [Validators.required]],
+        iBP: ["", [Validators.required]],
+        amount: ["", [Validators.required]],
+        datedDate: ["", [Validators.required]],
+        recordedDate: ["", [Validators.required]],
+        note: ["", [Validators.required]],
 
       }),
       judgement:this.fb.group({
+        judgementType: ["", [Validators.required]],
+        plaintIf: ["", [Validators.required]],
+        defendant: ["", [Validators.required]],
+        datedDate: ["", [Validators.required]],
+        RecordedDate: ["", [Validators.required]],
+        caseNo: ["", [Validators.required]],
+        judgenentAmount: ["", [Validators.required]],
+        comments: ["", [Validators.required]],
 
       }),
       tax:this.fb.group({
@@ -58,12 +84,15 @@ export class FormComponent implements OnInit {
           amount: ["", [Validators.required]],
           status: ["", [Validators.required]],
           paidDueDate: ["", [Validators.required]]
-        }),
+        })
 
       }),
       additionalInfo:this.fb.group({
-        multipleNames
-      }),
+        multipleNames:["", [Validators.required]],
+        AdditionalInfo: ["", [Validators.required]],
+        legalDescription: ["", [Validators.required]],
+        Disclaimer: ["", [Validators.required]]
+      })
 
     });
   }
