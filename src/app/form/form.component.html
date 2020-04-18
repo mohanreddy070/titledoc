@@ -27,7 +27,7 @@
 				</div>
 			</div>
 
-      <div class="form-group row mb-2">
+			<div class="form-group row mb-2">
 				<label class="col-md-2 col-form-label"
                for="searchDateId">Search Date</label>
 				<div class="col-md-8">
@@ -48,7 +48,7 @@
 			</div>
 
 
-<div class="form-group row mb-2">
+			<div class="form-group row mb-2">
 				<label class="col-md-2 col-form-label"
                for="effectiveDateId">Effective Date</label>
 				<div class="col-md-8">
@@ -69,18 +69,83 @@
 			</div>
 
 
-        <div class="form-group row mb-2">
-        <div class="offset-md-2 col-md-4">
-          <button class="btn btn-primary mr-3"
-                  type="submit"
-                  style="width:80px"
-                  [title]="customerForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
-                  [disabled]="!customerForm.valid">
-            Save
-          </button>
-          
-        </div>
-      </div>
+
+
+
+			<div class="form-group row mb-2">
+				<label class="col-md-2 col-form-label"
+                     for="street1Id">Address</label>
+				<div class="col-md-4">
+					<input class="form-control"
+                       id="street1Id"
+                       type="text"
+                       placeholder="Street address (required)"
+                       formControlName="street1"
+                       >
+					
+				</div>
+				<div class="col-md-4">
+					<input class="form-control"
+                       id="street2Id"
+                       type="text"
+                       placeholder="Street address (second line)"
+                       formControlName="street2">
+          </div>
+
+					<div class="form-group row mb-2">
+						<label class="col-md-1 col-form-label"
+                     for="cityId">City</label>
+						<div class="col-md-3">
+							<input class="form-control"
+                       id="cityId"
+                       type="text"
+                       placeholder="City"
+                       formControlName="city">
+              </div>
+							<label class="col-md-1 col-form-label"
+                     for="stateId">State</label>
+							<div class="col-md-3">
+								<select class="form-control"
+                      id="stateId"
+                      formControlName="state">
+                <option value=""
+                        disabled
+                        selected
+                        hidden>Select a State...</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
+              </select>
+							</div>
+							<label class="col-md-1 col-form-label"
+                     for="zipCode">Zip Code</label>
+							<div class="col-md-2">
+								<input class="form-control"
+                      id="zipId"
+                      type="number"
+                      placeholder="Zip Code"
+                      formControlName="zip">
+              </div>
+							</div>
+						</div>
+
+						<div class="form-group row mb-2">
+							<div class="offset-md-2 col-md-4">
+								<button class="btn btn-primary mr-3"
+            type="submit"
+            style="width:80px"
+            [title]="titleForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+            [disabled]="!titleForm.valid">
+      Save
+    </button>
+
+							</div>
+						</div>
 
 		</form>
 	</div>

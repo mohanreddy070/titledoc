@@ -17,7 +17,7 @@ export class FormComponent implements OnInit {
       orderNumber: ['', [Validators.required, ]],
       searchDate: ['', [Validators.required, ]],
       effectiveDate: ['', [Validators.required, ]],
-      addresses: this.fb.array([this.buildAddress()])
+      addresses: this.buildAddress()
       
     });
   }
