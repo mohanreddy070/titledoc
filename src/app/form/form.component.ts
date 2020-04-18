@@ -15,8 +15,25 @@ export class FormComponent implements OnInit {
   ngOnInit() {
     this.titleForm = this.fb.group({
       orderNumber: ['', [Validators.required, ]],
-      searchDate: ['', [Validators.required, ]]
+      searchDate: ['', [Validators.required, ]],
+      effectiveDate: ['', [Validators.required, ]],
+      addresses: this.fb.array([this.buildAddress()])
       
+    });
+  }
+
+   buildAddress(): FormGroup {
+    return this.fb.group({
+      street1: ['', Validators.required],
+      street2: '',
+      city: '',
+      state: '',
+      zip: '',
+      parcelNo: '',
+      lot: '',
+      block: '',
+      subDivision: ''
+
     });
   }
 

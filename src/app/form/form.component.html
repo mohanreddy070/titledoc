@@ -48,6 +48,26 @@
 			</div>
 
 
+<div class="form-group row mb-2">
+				<label class="col-md-2 col-form-label"
+               for="effectiveDateId">Effective Date</label>
+				<div class="col-md-8">
+					<input class="form-control"
+                 id="effectiveDateId"
+                 type="date"
+                 placeholder="Effective Date (required)"
+                 formControlName="effectiveDate"
+                 [ngClass]="{'is-invalid': (titleForm.get('effectiveDate').touched ||
+                                            titleForm.get('effectiveDate').dirty) &&
+                                            !titleForm.get('effectiveDate').valid }" />
+					<span class="invalid-feedback">
+            <span *ngIf="titleForm.get('effectiveDate').errors?.required">
+              Please enter your Effective Date.
+            </span>
+					</span>
+				</div>
+			</div>
+
 
         <div class="form-group row mb-2">
         <div class="offset-md-2 col-md-4">
