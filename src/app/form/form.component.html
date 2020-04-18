@@ -7,7 +7,8 @@
 		<form novalidate (ngSubmit)="save()" [formGroup]="titleForm">
 
 			<!-- Primary Details -->
-			<div class="form-group row mb-2">
+      <div >
+      <div class="form-group row mb-1">
 				<label class="col-md-2 col-form-label"
                for="orderNumberId">Order Number</label>
 				<div class="col-md-8">
@@ -30,7 +31,7 @@
 			<div class="form-group row mb-2">
 				<label class="col-md-2 col-form-label"
                for="searchDateId">Search Date</label>
-				<div class="col-md-8">
+				<div class="col-md-3">
 					<input class="form-control"
                  id="searchDateId"
                  type="date"
@@ -45,13 +46,10 @@
             </span>
 					</span>
 				</div>
-			</div>
 
-
-			<div class="form-group row mb-2">
 				<label class="col-md-2 col-form-label"
                for="effectiveDateId">Effective Date</label>
-				<div class="col-md-8">
+				<div class="col-md-3">
 					<input class="form-control"
                  id="effectiveDateId"
                  type="date"
@@ -67,38 +65,126 @@
 					</span>
 				</div>
 			</div>
+
+
 			<div formGroupName="address">
 				<div class="form-group row mb-2">
-					<label class="col-md-2 col-form-label"
-               for="street1Id">Street1 </label>
-					<div class="col-md-8">
+					<label class="col-md-2  "
+                  for="address"> Address </label>
+				</div>
+				<div class="form-group row mb-2">
+					<div class="col-md-4">
 						<input class="form-control"
-                 id="street1Id"
-                 type="text"
-                 placeholder="Effective Date (required)"
-                 formControlName="street1"  />					
+                id="street1Id"
+                type="text"
+                placeholder="address(required)"
+                formControlName="street1"
+                />
 					</div>
+
+					<div class="col-md-4">
+						<input class="form-control"
+                id="street2Id"
+                type="text"
+                placeholder="address(required)"
+                formControlName="street2"
+                />
+					</div>
+
+          <div class="col-md-4">
+            <input class="form-control"
+              id="city"
+              type="text"
+              placeholder="city"
+              formControlName="city"
+              />
+					</div>
+
+          <label class="col-md-1"
+                  for="address"> state</label>
+          <div class="col-md-3">
+            <input class="form-control"
+              id="state"
+              type="text"
+              placeholder="state"
+              formControlName="state"
+              />
+					</div>
+
+          <label class="col-md-0.8"
+                  for="address"> zip</label>
+          <div class="col-md-3">
+            <input class="form-control"
+              id="zip"
+              type="number"
+              placeholder="zip"
+              formControlName="zip"
+              />
+					</div>
+
+          <label class="col-md-1.7"
+                  for="address"> Parcel No</label>
+          <div class="col-md-3">
+            <input class="form-control"
+              id="parcelNo"
+              type="text"
+              placeholder="parcel No"
+              formControlName="parcelNo"
+              />
+					</div>
+
+          <label class="col-md-1"
+                  for="address"> Lot</label>
+          <div class="col-md-2">
+            <input class="form-control"
+              id="lot"
+              type="text"
+              placeholder="lot"
+              formControlName="lot"
+              />
+					</div>
+
+          <label class="col-md-1"
+                  for="address"> Block</label>
+          <div class="col-md-2">
+            <input class="form-control"
+              id="block"
+              type="text"
+              placeholder="Block"
+              formControlName="block"
+              />
+					</div>
+
+          <label class="col-md-2"
+                  for="address"> Sub Division</label>
+          <div class="col-md-3">
+            <input class="form-control"
+              id="subDivision"
+              type="text"
+              placeholder="sub Division"
+              formControlName="subDivision"
+              />
+					</div>
+
+
 				</div>
 			</div>
+      </div>
 
+			
 
+      <div class="form-group row mb-2">
+        <div class="offset-md-2 col-md-4">
+          <button class="btn btn-primary mr-3"
+            type="submit"
+            style="width:80px"
+            [title]="titleForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+            [disabled]="!titleForm.valid">
+            Save
+          </button>
 
-
-
-
-
-			<div class="form-group row mb-2">
-				<div class="offset-md-2 col-md-4">
-					<button class="btn btn-primary mr-3"
-                  type="submit"
-                  style="width:80px"
-                  [title]="titleForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
-                  [disabled]="!titleForm.valid">
-                  Save
-              </button>
-
-				</div>
-			</div>
+        </div>
+      </div>
 
 		</form>
 	</div>
