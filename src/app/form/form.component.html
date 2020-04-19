@@ -1,5 +1,5 @@
 <div class="card">
-	<div class="card-header">
+	<div class="card-header" st>
 		Title Trails
 	</div>
 
@@ -171,6 +171,102 @@
 			</div>
       </div>
 
+
+      <!-- Deed Information -->
+      <div>
+        <div class="card-body" st>
+		      deed
+	      </div>
+        <div formGroupName ="deed">
+          <div class="form-group row mb-2">
+            <label class="col-md-1"
+                for="deedType"> Deed Type</label>
+            <div class="col-md-3">
+              <input class="form-control"
+                id="deedType"
+                type="text"
+                placeholder="Deed Type"
+                formControlName="deedType"
+                />
+            </div>
+
+            <label class="col-md-1"
+                for="grantor"> Grantor</label>
+            <div class="col-md-3">
+              <input class="form-control"
+                id="grantor"
+                type="text"
+                placeholder="Grantor"
+                formControlName="grantor"
+                />
+            </div>
+
+            <label class="col-md-1"
+                for="grantee"> Grantee</label>
+            <div class="col-md-3">
+              <input class="form-control"
+                id="grantee"
+                type="text"
+                placeholder="Grantee"
+                formControlName="grantee"
+                />
+            </div>
+
+            <label class="col-md-1"
+                for="vesting"> Vesting</label>
+            <div class="col-md-3">
+              <input class="form-control"
+                id="vesting"
+                type="text"
+                placeholder="Vesting"
+                formControlName="vesting"
+                />
+            </div>
+
+            <label class="col-md-1"
+                for="iBP"> Instrument/Book/Page Type</label>
+            <div class="col-md-3">
+              <input class="form-control"
+                id="iBP"
+                type="text"
+                formControlName="iBP"
+                />
+            </div>
+
+            <label class="col-md-1"
+                for="datedDate"> Dated Date</label>
+            <div class="col-md-3">
+              <input class="form-control"
+                id="datedDate"
+                type="date"
+                formControlName="datedDate"
+                />
+            </div>
+
+            <label class="col-md-1"
+                for="recordedDate"> Recorded Date</label>
+            <div class="col-md-3">
+              <input class="form-control"
+                id="recordedDate"
+                type="date"
+                formControlName="recordedDate"
+                />
+            </div>
+
+            <label class="col-md-1"
+                for="note"> Note</label>
+            <div class="col-md-3">
+              <textarea class="form-control"
+                id="note"
+                formControlName="note"
+                />
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
 			
 
       <div class="form-group row mb-2">

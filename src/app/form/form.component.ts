@@ -38,7 +38,7 @@ export class FormComponent implements OnInit {
         })
       }),
       deed:this.fb.group({
-        deedtype: ["", [Validators.required]],
+        deedType: ["", [Validators.required]],
         considerationAmount: ["", [Validators.required]],
         grantor: ["", [Validators.required]],
         grantee: ["", [Validators.required]],
