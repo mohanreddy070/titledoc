@@ -66,9 +66,9 @@ export class FormComponent implements OnInit {
         plaintIf: ["", [Validators.required]],
         defendant: ["", [Validators.required]],
         datedDate: ["", [Validators.required]],
-        RecordedDate: ["", [Validators.required]],
+        recordedDate: ["", [Validators.required]],
         caseNo: ["", [Validators.required]],
-        judgenentAmount: ["", [Validators.required]],
+        judgementAmount: ["", [Validators.required]],
         comments: ["", [Validators.required]],
 
       }),
