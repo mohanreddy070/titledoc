@@ -274,7 +274,7 @@
       <!-- Mortagage Information -->
       <div>
         <div class="card-body" st>
-		      deed
+		      Mortgage
 	      </div>
         <div formGroupName ="mortgage">
           <div class="form-group row mb-2">
@@ -380,7 +380,7 @@
 			
 
 
-       <!-- Mortagage Information -->
+       <!-- Judgement Information -->
       <div>
         <div class="card-body" st>
 		      Judement
@@ -478,7 +478,193 @@
           </div>
         </div>
       </div>
+
+
+      <!-- Tax Information -->
+      <div>
+        <div class="card-body" st>
+		      Judement
+	      </div>
+        <div formGroupName ="tax">
+          <div class="form-group row mb-2">
+            <label class="col-md-2 "
+                for="assesmentYear">Assesment Year</label>
+            <div class="col-md-3 row mb-2">
+              <input class="form-control"
+                id="assesmentYear"
+                type="text"
+                placeholder="Assesment Year"
+                formControlName="assesmentYear"
+                />
+            </div>
+
+            <label class="col-md-1.7 "
+                for="taxYear">Tax Year</label>
+            <div class="col-md-2 row mb-2">
+              <input class="form-control"
+                id="taxYear"
+                type="text"
+                placeholder="Tax Year"
+                formControlName="taxYear"
+                />
+            </div>
+
+            <label class="col-md-2 row mb-2"
+                for="landValue">Land Value</label>
+            <div class="col-md-2 row mb-2">
+              <input class="form-control"
+                id="landValue"
+                type="text"
+                placeholder="Land Value"
+                formControlName="landValue"
+                />
+            </div>
+
+            <label class="col-md-2 row mb-2"
+                for="buildingValue">Building Value</label>
+            <div class="col-md-2 row mb-2">
+              <input class="form-control"
+                id="buildingValue"
+                type="text"
+                placeholder="Building Value"
+                formControlName="buildingValue"
+                />
+            </div>
+
+           <label class="col-md-2 row mb-2"
+                for="totalValue">Total Value</label>
+            <div class="col-md-2 row mb-2">
+              <input class="form-control"
+                id="totalValue"
+                type="text"
+                placeholder="Total Value"
+                formControlName="totalValue"
+                />
+            </div>
+
+            <label class="col-md-2 row mb-2"
+                for="exemption">Exemption</label>
+            <div class="col-md-3 row mb-2">
+              <input class="form-control"
+                id="exemption"
+                type="text"
+                placeholder="Exemption"
+                formControlName="exemption"
+                />
+            </div>
+
+            <div formGroupName ="taxes">
+              <div class="form-group row mb-2">
+                <label class="col-md-2 "
+                    for="installment">Installment</label>
+                <div class="col-md-3 row mb-2">
+                  <input class="form-control"
+                    id="installment"
+                    type="text"
+                    placeholder="Installment"
+                    formControlName="installment"
+                    />
+                </div>
+
+                <label class="col-md-2 "
+                    for="amount">Amount</label>
+                <div class="col-md-3 row mb-2">
+                  <input class="form-control"
+                    id="amount"
+                    type="text"
+                    placeholder="Amount"
+                    formControlName="amount"
+                    />
+                </div>
+                <label class="col-md-2 "
+                    for="status">Status</label>
+                <div class="col-md-3 row mb-2">
+                  <input class="form-control"
+                    id="status"
+                    type="text"
+                    placeholder="Status"
+                    formControlName="status"
+                    />
+                </div>
+                <label class="col-md-2 "
+                    for="paidDueDate">Paid Due Date</label>
+                <div class="col-md-3 row mb-2">
+                  <input class="form-control"
+                    id="paidDueDate"
+                    type="date"
+                    formControlName="paidDueDate"
+                    />
+                </div>
+
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 			
+
+      <!-- Additional Information -->
+      <div>
+        <div class="card-body" st>
+		      Additional Info
+	      </div>
+        <div formGroupName ="judgement">
+          <div class="form-group row mb-2">
+            <label class="col-md-3 "
+                for="multipleNames">Multiple Names</label>
+            <div class="col-md-7">
+              <input class="form-control"
+                id="multipleNames"
+                type="text"
+                placeholder="Enter Multiple Names"
+                formControlName="multipleNames"
+                />
+            </div> 
+          </div>
+
+          <div class="form-group row mb-2">
+            <label class="col-md-3 "
+                for="additionalInfo">Additional Information</label>
+            <div class="col-md-7">
+              <input class="form-control"
+                id="additionalInfo"
+                type="text"
+                formControlName="additionalInfo"
+                />
+            </div> 
+          </div>
+
+          <div class="form-group row mb-2">
+            <label class="col-md-3 "
+                for="legalDescription">Legal Description</label>
+            <div class="col-md-7">
+              <input class="form-control"
+                id="legalDescription"
+                type="text"
+                formControlName="legalDescription"
+                />
+            </div> 
+          </div>
+
+          <div class="form-group row mb-2">
+            <label class="col-md-3 "
+                for="disclaimer">Disclaimer</label>
+            <div class="col-md-7">
+              <input class="form-control"
+                id="disclaimer"
+                type="text"
+                placeholder="Disclaimer"
+                formControlName="disclaimer"
+                />
+            </div> 
+          </div>
+
+
+        </div>
+      </div>
+
+
 
       <div class="form-group row mb-2">
         <div class="offset-md-2 col-md-4">
@@ -492,6 +678,8 @@
 
         </div>
       </div>
+
+     
 
 		</form>
 	</div>

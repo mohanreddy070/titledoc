@@ -89,9 +89,9 @@ export class FormComponent implements OnInit {
       }),
       additionalInfo:this.fb.group({
         multipleNames:["", [Validators.required]],
-        AdditionalInfo: ["", [Validators.required]],
+        additionalInfo: ["", [Validators.required]],
         legalDescription: ["", [Validators.required]],
-        Disclaimer: ["", [Validators.required]]
+        disclaimer: ["", [Validators.required]]
       })
 
     });
