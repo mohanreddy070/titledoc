@@ -37,18 +37,7 @@ export class FormComponent implements OnInit {
           subDivision: ""
         })
       }),
-      deed:this.fb.group({
-        deedType: ["", [Validators.required]],
-        considerationAmount: ["", [Validators.required]],
-        grantor: ["", [Validators.required]],
-        grantee: ["", [Validators.required]],
-        vesting: ["", [Validators.required]],
-        iBP: ["", [Validators.required]],
-        datedDate: ["", [Validators.required]],
-        recordedDate: ["", [Validators.required]],
-        note: ["", [Validators.required]],
-
-      }),
+      deed:this.fb.array([this.buildDeed]),
       mortgage:this.fb.group({
         mortgagor: ["", [Validators.required]],
         mortgagee: ["", [Validators.required]],
@@ -95,5 +84,19 @@ export class FormComponent implements OnInit {
       })
 
     });
+  }
+
+  buildDeed(){
+    return this.fb.group({
+      deedType: ["", [Validators.required]],
+        considerationAmount: ["", [Validators.required]],
+        grantor: ["", [Validators.required]],
+        grantee: ["", [Validators.required]],
+        vesting: ["", [Validators.required]],
+        iBP: ["", [Validators.required]],
+        datedDate: ["", [Validators.required]],
+        recordedDate: ["", [Validators.required]],
+        note: ["", [Validators.required]],
+    })
   }
 }

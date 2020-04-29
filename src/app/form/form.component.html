@@ -7,7 +7,7 @@
 		<form novalidate (ngSubmit)="save()" [formGroup]="titleForm">
 
 			<!-- Primary Information -->
-      <div formGroupName="primaryInfo">
+      <div formGroupName="primaryInfo" class="bg-light p-10">
       <div class="form-group row mb-1">
 				<label class="col-md-2 col-form-label"
                for="orderNumberId">Order Number</label>
@@ -173,11 +173,11 @@
 
 
       <!-- Deed Information -->
-      <div>
+      <div formArrayName="deed">
         <div class="card-body" st>
 		      deed
 	      </div>
-        <div formGroupName ="deed">
+        <div formGroupName ="[i]" *ngFor="let deed of deed.controls; let i=index">
           <div class="form-group row mb-2">
             <label class="col-md-1.5 "
                 for="deedType">Deed Type</label>
@@ -201,7 +201,7 @@
                 />
             </div>
 
-            <label class="col-md-1 row mb-2"
+            <label class="col-md-2 row mb-2"
                 for="grantee">Grantee</label>
             <div class="col-md-3 row mb-2">
               <input class="form-control"
@@ -223,7 +223,7 @@
                 />
             </div>
 
-            <label class="col-md-3 row mb-2"
+            <label class="col-md-3 row mb-2 mx-auto"
                 for="iBP"> Instrument/Book/Page </label>
             <div class="col-md-3 row mb-2">
               <input class="form-control"
@@ -609,7 +609,7 @@
         <div class="card-body" st>
 		      Additional Info
 	      </div>
-        <div formGroupName ="judgement">
+        <div formGroupName ="additionalInfo">
           <div class="form-group row mb-2">
             <label class="col-md-3 "
                 for="multipleNames">Multiple Names</label>
