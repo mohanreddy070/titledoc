@@ -15,6 +15,10 @@ import {
 })
 export class FormComponent implements OnInit {
   titleForm: FormGroup;
+
+  get deeds(): FormArray {
+    return this.titleForm.get('deeds') as FormArray;
+  }
   
  
   constructor(private fb: FormBuilder) {}
@@ -37,19 +41,8 @@ export class FormComponent implements OnInit {
           subDivision: ""
         })
       }),
-      deed:this.fb.array([this.buildDeed]),
-      mortgage:this.fb.group({
-        mortgagor: ["", [Validators.required]],
-        mortgagee: ["", [Validators.required]],
-        grantor: ["", [Validators.required]],
-        trustee: ["", [Validators.required]],
-        iBP: ["", [Validators.required]],
-        amount: ["", [Validators.required]],
-        datedDate: ["", [Validators.required]],
-        recordedDate: ["", [Validators.required]],
-        note: ["", [Validators.required]],
-
-      }),
+      deeds:this.fb.array([this.buildDeed()]),
+      mortgages:this.fb.array([]),
       judgement:this.fb.group({
         judgementType: ["", [Validators.required]],
         plaintIf: ["", [Validators.required]],
@@ -86,17 +79,44 @@ export class FormComponent implements OnInit {
     });
   }
 
-  buildDeed(){
+//deed
+  addDeed(){
+    this.deeds.push(this.buildDeed());
+  }
+
+  buildDeed(): FormGroup{
     return this.fb.group({
       deedType: ["", [Validators.required]],
-        considerationAmount: ["", [Validators.required]],
+      considerationAmount: ["", [Validators.required]],
+      grantor: ["", [Validators.required]],
+      grantee: ["", [Validators.required]],
+      vesting: ["", [Validators.required]],
+      iBP: ["", [Validators.required]],
+      datedDate: ["", [Validators.required]],
+      recordedDate: ["", [Validators.required]],
+      note: ["", [Validators.required]]
+    });
+  }
+
+//mortgage
+  addMortgage(){
+    this.deeds.push(this.buildMortgage());
+  }
+
+  buildMortgage(): FormGroup{
+    return this.fb.group({
+        mortgagor: ["", [Validators.required]],
+        mortgagee: ["", [Validators.required]],
         grantor: ["", [Validators.required]],
-        grantee: ["", [Validators.required]],
-        vesting: ["", [Validators.required]],
+        trustee: ["", [Validators.required]],
         iBP: ["", [Validators.required]],
+        amount: ["", [Validators.required]],
         datedDate: ["", [Validators.required]],
         recordedDate: ["", [Validators.required]],
         note: ["", [Validators.required]],
-    })
+
+      })
   }
+
+
 }

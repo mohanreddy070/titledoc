@@ -173,17 +173,18 @@
 
 
       <!-- Deed Information -->
-      <div formArrayName="deed">
+      <div formArrayName="deeds">
         <div class="card-body" st>
 		      deed
 	      </div>
-        <div formGroupName ="[i]" *ngFor="let deed of deed.controls; let i=index">
+        <div [formGroupName] ="i" 
+          *ngFor="let deed of deeds.controls; let i=index">
           <div class="form-group row mb-2">
             <label class="col-md-1.5 "
-                for="deedType">Deed Type</label>
+                attr.for="{{'deedType' + i}}">Deed Type</label>
             <div class="col-md-3 row mb-2">
               <input class="form-control"
-                id="deedType"
+                id="{{'deedType' + i}}"
                 type="text"
                 placeholder="Deed Type"
                 formControlName="deedType"
@@ -267,16 +268,26 @@
 
           </div>
         </div>
+        <div class="mx-auto">
+          <button class="btn btn-outline-primary"
+                    type="button"
+                    [title]="deeds.valid ? 'Add another deed' : 'Disabled until the existing deed data is valid'"
+                    [disabled]="!deeds.valid"
+                    (click)="addDeed()">
+              Add Another Deed
+            </button>
+        </div>
       </div>
 
 
 
       <!-- Mortagage Information -->
-      <div>
+      <div formArrayName="mortgages">
         <div class="card-body" st>
 		      Mortgage
 	      </div>
-        <div formGroupName ="mortgage">
+        <div [formGroupName] ="i" 
+          *ngFor="let mortgage of mortgages.controls; let i=index">
           <div class="form-group row mb-2">
             <label class="col-md-1.5 "
                 for="mortgagor">Mortgagor</label>
@@ -375,6 +386,15 @@
 
 
           </div>
+        </div>
+        <div class="mx-auto">
+          <button class="btn btn-outline-primary"
+                    type="button"
+                    [title]="mortgages.valid ? 'Add another mortgage' : 'Disabled until the existing mortgage data is valid'"
+                    [disabled]="!mortgage.valid"
+                    (click)="addMortgage()">
+              Add Another Deed
+            </button>
         </div>
       </div>
 			
