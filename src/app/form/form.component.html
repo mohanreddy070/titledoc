@@ -272,7 +272,6 @@
           <button class="btn btn-outline-primary"
                     type="button"
                     [title]="deeds.valid ? 'Add another deed' : 'Disabled until the existing deed data is valid'"
-                    [disabled]="!deeds.valid"
                     (click)="addDeed()">
               Add Another Deed
             </button>
@@ -391,9 +390,9 @@
           <button class="btn btn-outline-primary"
                     type="button"
                     [title]="mortgages.valid ? 'Add another mortgage' : 'Disabled until the existing mortgage data is valid'"
-                    [disabled]="!mortgage.valid"
+                    [disabled]="!mortgages.valid"
                     (click)="addMortgage()">
-              Add Another Deed
+              Add Another Mortgage
             </button>
         </div>
       </div>

@@ -19,6 +19,10 @@ export class FormComponent implements OnInit {
   get deeds(): FormArray {
     return this.titleForm.get('deeds') as FormArray;
   }
+
+  get mortgages(): FormArray {
+    return this.titleForm.get('mortgages') as FormArray;
+  }
   
  
   constructor(private fb: FormBuilder) {}
@@ -100,7 +104,7 @@ export class FormComponent implements OnInit {
 
 //mortgage
   addMortgage(){
-    this.deeds.push(this.buildMortgage());
+    this.mortgages.push(this.buildMortgage());
   }
 
   buildMortgage(): FormGroup{
