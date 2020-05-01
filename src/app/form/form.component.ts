@@ -7,6 +7,7 @@ import {
   ValidatorFn,
   FormArray
 } from "@angular/forms";
+import {DataService} from "../../data.service"
 
 @Component({
   selector: "app-form",
@@ -15,6 +16,7 @@ import {
 })
 export class FormComponent implements OnInit {
   titleForm: FormGroup;
+  data: DataService;
 
   get deeds(): FormArray {
     return this.titleForm.get('deeds') as FormArray;
@@ -120,6 +122,11 @@ export class FormComponent implements OnInit {
         note: ["", [Validators.required]],
 
       })
+  }
+
+//save action
+  save(){
+    this.data.addData('hello');
   }
 
 

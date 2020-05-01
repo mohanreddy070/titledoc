@@ -6,12 +6,11 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./report.component.css']
 })
 export class ReportComponent implements OnInit {
-  @Input() data: any;
+ 
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.data)
   }
 
 }
