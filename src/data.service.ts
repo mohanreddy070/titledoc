@@ -11,4 +11,8 @@ export class DataService {
     console.log(data);
   }
 
+  getData(){
+    return this.data;
+  }
+
 }

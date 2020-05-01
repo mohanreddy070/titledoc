@@ -1,0 +1,28 @@
+<div class="card">
+	<div class="card-header mx-auto" st>
+		Title Report
+	</div>
+  <div>
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Deed Information</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let deed of data.deeds" >
+    <tr>
+      <th scope="row">Deed Type</th>
+      <td>{{deed.deedType}}</td>
+      <th scope="row">Consideration Amount</th>
+      <td>{{deed.considerationAmount}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Deed Type</th>
+      <td>Mark</td>
+      <th scope="row">Deed Type</th>
+      <td>Mark</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</div>
