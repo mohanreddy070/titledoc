@@ -6,10 +6,13 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { FormComponent } from './form/form.component';
 import { ReportComponent } from './report/report.component';
+import {DataService} from'../data.service';
 
 @NgModule({
   imports:      [ BrowserModule, ReactiveFormsModule ],
   declarations: [ AppComponent, HelloComponent, FormComponent, ReportComponent ],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent ],
+  providers:    [DataService]
+
 })
 export class AppModule { }

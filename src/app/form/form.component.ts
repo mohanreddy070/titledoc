@@ -16,7 +16,6 @@ import {DataService} from "../../data.service"
 })
 export class FormComponent implements OnInit {
   titleForm: FormGroup;
-  data: DataService;
 
   get deeds(): FormArray {
     return this.titleForm.get('deeds') as FormArray;
@@ -27,7 +26,7 @@ export class FormComponent implements OnInit {
   }
   
  
-  constructor(private fb: FormBuilder) {}
+  constructor(private db: DataService, private fb: FormBuilder) {}
 
   ngOnInit() {
     this.titleForm = this.fb.group({
@@ -93,7 +92,7 @@ export class FormComponent implements OnInit {
   buildDeed(): FormGroup{
     return this.fb.group({
       deedType: ["", [Validators.required]],
-      considerationAmount: ["", [Validators.required]],
+      //considerationAmount: ["", [Validators.required]],
       grantor: ["", [Validators.required]],
       grantee: ["", [Validators.required]],
       vesting: ["", [Validators.required]],
@@ -126,7 +125,9 @@ export class FormComponent implements OnInit {
 
 //save action
   save(){
-    this.data.addData('hello');
+    //console.log(JSON.stringify(this.titleForm.value));
+    this.db.addData(JSON.stringify(this.titleForm.value))
+
   }
 
 
