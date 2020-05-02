@@ -4,39 +4,30 @@
 	</div>
   <div>
     <table class="table" *ngFor="let deed of data.deeds">
-  <thead>
+  <thead class="bg-sucess">
     <tr>
-      <th scope="col">Deed Information</th>
+      <th colspan="2">Deed Information</th>
     </tr>
   </thead>
-  <tbody  >
+  <tbody  class="bg-default">
     <tr>
-      <th scope="row">Deed Type</th>
-      <td>{{deed.deedType}}</td>
-      <th scope="row">Consideration Amount</th>
-      <td>{{deed.considerationAmount}}</td>
+      <td ><b>Deed Type :</b> {{deed.deedType}}</td>
+      <td ><b>Consideration Amount :</b> {{deed.considerationAmount}}</td>
     </tr>
     <tr>
-      <th scope="row">Grantor</th>
-      <td>{{deed.grantor}}</td>
-      <th scope="row">Grantee</th>
-      <td>{{deed.graantee}}</td>
+      <td ><b>Grantor :</b> {{deed.grantor}}</td>
+      <td ><b>Grantee :</b> {{deed.graantee}}</td>
     </tr>
     <tr>
-      <th scope="row">Vesting</th>
-      <td>{{deed.vesting}}</td>
-      <th scope="row">Instrument/Book/Page</th>
-      <td>{{deed.instrument}}</td>
+      <td ><b>Vesting :</b> {{deed.vesting}}</td>
+      <td ><b>Instrument/Book/Page :</b> {{deed.iBP}}</td>
     </tr>
     <tr>
-      <th scope="row">Dated Date</th>
-      <td>{{deed.datedDate}}</td>
-      <th scope="row">Recorded Date</th>
-      <td>{{deed.recordedDate}}</td>
+      <td ><b>Dated Date :</b> {{deed.datedDate}}</td>
+      <td ><b>Recorded Date :</b> {{deed.recordedDate}}</td>
     </tr>
     <tr>
-      <th scope="row">Note</th>
-      <td>{{deed.note}}</td>
+      <td colspan="2"><b>Note :</b> {{deed.note}}</td>
     </tr>
   </tbody>
 </table>
