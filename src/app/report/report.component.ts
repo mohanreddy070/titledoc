@@ -15,7 +15,7 @@ export class ReportComponent implements OnInit {
     this.data = this.db.getData();
     console.log('reult');
     console.log(this.data);
-    console.log(this.data.get("deeds"));
+    console.log(this.data.deeds);
 
   }
 
