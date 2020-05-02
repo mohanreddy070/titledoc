@@ -13,9 +13,6 @@ export class ReportComponent implements OnInit {
 
   ngOnInit() {
     this.data = this.db.getData();
-    console.log('reult');
-    console.log(this.data);
-    console.log(this.data.deeds);
 
   }
 

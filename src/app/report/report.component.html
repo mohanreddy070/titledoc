@@ -1,22 +1,22 @@
 <div class="card">
-	<div class="card-header mx-auto" st>
+	<div class="card-header mx-auto" >
 		Title Report
 	</div>
   <div>
     <table class="table" *ngFor="let deed of data.deeds">
-  <thead class="bg-sucess">
+  <thead class="bg-success">
     <tr>
       <th colspan="2">Deed Information</th>
     </tr>
   </thead>
-  <tbody  class="bg-default">
+  <tbody  class="bg-light">
     <tr>
       <td ><b>Deed Type :</b> {{deed.deedType}}</td>
       <td ><b>Consideration Amount :</b> {{deed.considerationAmount}}</td>
     </tr>
     <tr>
       <td ><b>Grantor :</b> {{deed.grantor}}</td>
-      <td ><b>Grantee :</b> {{deed.graantee}}</td>
+      <td ><b>Grantee :</b> {{deed.grantee}}</td>
     </tr>
     <tr>
       <td ><b>Vesting :</b> {{deed.vesting}}</td>
@@ -28,6 +28,37 @@
     </tr>
     <tr>
       <td colspan="2"><b>Note :</b> {{deed.note}}</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+  <div>
+    <table class="table" *ngFor="let mortgage of data.mortgages">
+  <thead class="bg-success">
+    <tr>
+      <th colspan="2">Mortgage Information</th>
+    </tr>
+  </thead>
+  <tbody  class="bg-light">
+    <tr>
+      <td ><b>Mortgagor :</b> {{mortgage.mortgagor}}</td>
+      <td ><b>Mortgagee :</b> {{mortgage.mortgagee}}</td>
+    </tr>
+    <tr>
+      <td ><b>Grantor :</b> {{mortgage.grantor}}</td>
+      <td ><b>Trustee :</b> {{mortgage.trustee}}</td>
+    </tr>
+    <tr>
+      <td ><b>Instrument/Book/Page :</b> {{mortgage.iBP}}</td>
+      <td ><b>Amount :</b> {{mortgage.amount}}</td>
+    </tr>
+    <tr>
+      <td ><b>Dated Date :</b> {{mortgage.datedDate}}</td>
+      <td ><b>Recorded Date :</b> {{mortgage.recordedDate}}</td>
+    </tr>
+    <tr>
+      <td colspan="2"><b>Note :</b> {{mortgage.note}}</td>
     </tr>
   </tbody>
 </table>
