@@ -7,7 +7,8 @@ import {
   ValidatorFn,
   FormArray
 } from "@angular/forms";
-import {DataService} from "../../data.service"
+import {DataService} from "../../data.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: "app-form",
@@ -26,7 +27,7 @@ export class FormComponent implements OnInit {
   }
   
  
-  constructor(private db: DataService, private fb: FormBuilder) {}
+  constructor(private db: DataService, private fb: FormBuilder, private router: Router) {}
 
   ngOnInit() {
     this.titleForm = this.fb.group({
@@ -127,7 +128,7 @@ export class FormComponent implements OnInit {
   save(){
     //console.log(JSON.stringify(this.titleForm.value));
     this.db.addData(JSON.stringify(this.titleForm.value));
-
+    this.router.navigate(['/', 'result']);
   }
 
 
