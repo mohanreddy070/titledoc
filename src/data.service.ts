@@ -8,7 +8,6 @@ export class DataService {
 
   addData(data:any){
     this.data = data;
-    console.log(data);
   }
 
   getData(){

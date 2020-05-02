@@ -127,7 +127,7 @@ export class FormComponent implements OnInit {
 //save action
   save(){
     //console.log(JSON.stringify(this.titleForm.value));
-    this.db.addData(JSON.stringify(this.titleForm.value));
+    this.db.addData(JSON.parse(this.titleForm.value));
     this.router.navigate(['/', 'result']);
   }
 
