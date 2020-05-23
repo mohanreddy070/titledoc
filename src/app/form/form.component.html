@@ -182,7 +182,7 @@
 
 
       <!-- Deed Information -->
-      <div formArrayName="deeds" class="card mb-3">
+      <div formArrayName="deeds" class="card mb-3 bg-light">
         
         <div [formGroupName] ="i" 
           *ngFor="let deed of deeds.controls; let i=index">
@@ -309,7 +309,7 @@
 
 
       <!-- Mortagage Information -->
-      <div formArrayName="mortgages" class="card mb-3">
+      <div formArrayName="mortgages" class="card mb-3 bg-light">
         
         <div [formGroupName] ="i" 
           *ngFor="let mortgage of mortgages.controls; let i=index">
