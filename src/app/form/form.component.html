@@ -7,7 +7,7 @@
 		<form novalidate (ngSubmit)="save()" [formGroup]="titleForm">
 
 			<!-- Primary Information -->
-      <div formGroupName="primaryInfo" class="bg-light p-10 card row-mb-20">
+      <div formGroupName="primaryInfo" class="bg-light p-10 card card-body row-mb-20">
         <div class="form-row">
           <div class="form-group col-md-4">
             <label class="col-form-label"
@@ -285,13 +285,13 @@
             <div class="col-md-2"></div>
 
             
-            <div class="col-md-8 form-group ">
+            <div class="col-md-12 form-group ">
               <label class="col-form-label "
                 for="note">Note</label>
-              <textarea class="form-control"
-                id="note"
+              <textarea 
+                class="form-control"
                 formControlName="note"
-                />
+                ></textarea>
             </div>
 
           </div>
@@ -309,16 +309,18 @@
 
 
       <!-- Mortagage Information -->
-      <div formArrayName="mortgages">
-        <div class="card-body" st>
-		      Mortgage
-	      </div>
+      <div formArrayName="mortgages" class="card mb-3">
+        
         <div [formGroupName] ="i" 
           *ngFor="let mortgage of mortgages.controls; let i=index">
-          <div class="form-group row mb-2">
-            <label class="col-md-1.5 "
+          <div class="card-header" >
+		        Mortgage
+	        </div>
+          <div class="form-row mb-2">
+            
+            <div class="col-md-3 form-group">
+              <label class="col-form-label"
                 for="mortgagor">Mortgagor</label>
-            <div class="col-md-3 row mb-2">
               <input class="form-control"
                 id="mortgagor"
                 type="text"
@@ -327,9 +329,10 @@
                 />
             </div>
 
-            <label class="col-md-1.5 "
+            
+            <div class="col-md-3 form-group">
+              <label class="col-form-label "
                 for="mortgagee">Mortgagee</label>
-            <div class="col-md-3 row mb-2">
               <input class="form-control"
                 id="mortgagee"
                 type="text"
@@ -338,9 +341,10 @@
                 />
             </div>
 
-            <label class="col-md-1 row mb-2"
+            
+            <div class="col-md-3 form-group">
+              <label class="col-form-label "
                 for="grantor">Grantor</label>
-            <div class="col-md-3 row mb-2">
               <input class="form-control"
                 id="grantor"
                 type="text"
@@ -349,9 +353,10 @@
                 />
             </div>
 
-            <label class="col-md-1 row mb-2"
+            
+            <div class="col-md-3 form-group">
+              <label class="col-form-label"
                 for="trustee">Trustee</label>
-            <div class="col-md-3 row mb-2">
               <input class="form-control"
                 id="trustee"
                 type="text"
@@ -360,9 +365,10 @@
                 />
             </div>
 
-            <label class="col-md-3 row mb-2"
+            
+            <div class="col-md-3 form-group">
+              <label class="col-form-label "
                 for="iBP"> Instrument/Book/Page </label>
-            <div class="col-md-3 row mb-2">
               <input class="form-control"
                 id="iBP"
                 type="text"
@@ -370,9 +376,10 @@
                 />
             </div>
 
-            <label class="col-md-2 row mb-2"
+            
+            <div class="col-md-2 form-group">
+              <label class="col-form-label"
                 for="amount">Amount</label>
-            <div class="col-md-2 row mb-2">
               <input class="form-control"
                 id="amount"
                 type="text"
@@ -380,9 +387,9 @@
                 />
             </div>
 
-            <label class="col-md-2 row mb-2"
+            <div class="col-md-3 form-group">
+              <label class="col-form-label"
                 for="datedDate">Dated Date</label>
-            <div class="col-md-3 row mb-2">
               <input class="form-control"
                 id="datedDate"
                 type="date"
@@ -390,9 +397,10 @@
                 />
             </div>
 
-            <label class="col-md-2 row mb-2"
+           
+            <div class="col-md-3 form-group">
+              <label class="col-form-label"
                 for="recordedDate">Recorded Date</label>
-            <div class="col-md-3 row mb-2">
               <input class="form-control"
                 id="recordedDate"
                 type="date"
@@ -400,14 +408,14 @@
                 />
             </div>
 
-            <label class="col-md-1 row mb-2"
+            
+            <div class="col-md-12 ">
+              <label class="col-form-label"
                 for="note">Note</label>
-            <div class="col-md-8 row mb-2">
-              <input class="form-control"
+              <textarea class="form-control"
                 id="note"
-                type="text"
                 formControlName="note"
-                />
+                ></textarea>
             </div>
 
 
