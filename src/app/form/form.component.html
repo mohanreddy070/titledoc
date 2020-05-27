@@ -437,14 +437,15 @@
 
        <!-- Judgement Information -->
       <div>
-        <div class="card-body" st>
+        <div class="card-header" st>
 		      Judement
 	      </div>
-        <div formGroupName ="judgement">
-          <div class="form-group row mb-2">
-            <label class="col-md-2 "
+        <div formGroupName ="judgement" class ="card-body">
+          <div class="form-row ">
+            
+            <div class="form-group col-md-4">
+              <label class="col-form-label "
                 for="judgementType">Judgement Type</label>
-            <div class="col-md-3 row mb-2">
               <input class="form-control"
                 id="judgementType"
                 type="text"
@@ -453,9 +454,10 @@
                 />
             </div>
 
-            <label class="col-md-1.7 "
+           
+            <div class="form-group col-md-4">
+               <label class="col-form-label"
                 for="plaintIf">Plaint If</label>
-            <div class="col-md-2 row mb-2">
               <input class="form-control"
                 id="plaintIf"
                 type="text"
@@ -464,9 +466,10 @@
                 />
             </div>
 
-            <label class="col-md-2 row mb-2"
+            
+            <div class="form-group col-md-4">
+              <label class="col-form-label"
                 for="defendant">Defendant</label>
-            <div class="col-md-2 row mb-2">
               <input class="form-control"
                 id="defendant"
                 type="text"
@@ -475,11 +478,10 @@
                 />
             </div>
 
-            
-
-            <label class="col-md-2 row mb-2"
+          
+            <div class="form-group col-md-3">
+              <label class="col-form-label"
                 for="datedDate">Dated Date</label>
-            <div class="col-md-3 row mb-2">
               <input class="form-control"
                 id="datedDate"
                 type="date"
@@ -487,9 +489,10 @@
                 />
             </div>
 
-            <label class="col-md-2 row mb-2"
+            
+            <div class="form-group col-md-3">
+              <label class="col-form-label"
                 for="recordedDate">Recorded Date</label>
-            <div class="col-md-3 row mb-2">
               <input class="form-control"
                 id="recordedDate"
                 type="date"
@@ -497,9 +500,10 @@
                 />
             </div>
 
-            <label class="col-md-2 row mb-2"
+            
+            <div class="form-group col-md-3">
+              <label class="col-form-label"
                 for="caseNo">Case Number</label>
-            <div class="col-md-3 row mb-2">
               <input class="form-control"
                 id="caseNo"
                 type="text"
@@ -508,9 +512,10 @@
                 />
             </div>
 
-            <label class="col-md-3 row mb-2"
+            
+            <div class="form-group col-md-3">
+              <label class="col-form-label"
                 for="judgementAmount">Judgement Amount</label>
-            <div class="col-md-2 row mb-2">
               <input class="form-control"
                 id="judgementAmount"
                 type="text"
@@ -518,19 +523,16 @@
                 />
             </div>
 
-            <label class="col-md-1 row mb-2"
-                for="comments">Comments</label>
-            <div class="col-md-8 row mb-2">
-              <input class="form-control"
-                id="comments"
-                type="text"
-                formControlName="comments"
-                />
-            </div>
-
-
-
           </div>
+          <div class="form-group">
+            <label class="col-md-1 row mb-2"
+              for="comments">Comments</label>
+            <textarea class="form-control"
+              id="comments"
+              formControlName="comments"
+              ></textarea>
+          </div>
+
         </div>
       </div>
 
