@@ -7,7 +7,7 @@
 		<form novalidate (ngSubmit)="save()" [formGroup]="titleForm">
 
 			<!-- Primary Information -->
-      <div formGroupName="primaryInfo" class="bg-light p-10 card card-body row-mb-20">
+      <div formGroupName="primaryInfo" class="bg-light p-10 card border border-success card-body row-mb-20">
         <div class="form-row">
           <div class="form-group col-md-4">
             <label class="col-form-label"
@@ -182,11 +182,11 @@
 
 
       <!-- Deed Information -->
-      <div formArrayName="deeds" class="card mb-3 bg-light">
+      <div formArrayName="deeds" class="card border border-success mb-3 bg-light">
         
         <div [formGroupName] ="i" 
           *ngFor="let deed of deeds.controls; let i=index">
-          <div class="card-header" st>
+          <div class="card-header bg-default" st>
 		      Deed#{{i+1}}
 	      </div>
           <div class="card-body form-row">
@@ -309,11 +309,11 @@
 
 
       <!-- Mortagage Information -->
-      <div formArrayName="mortgages" class="card mb-3 bg-light">
+      <div formArrayName="mortgages" class="card border border-success mb-3 bg-light">
         
         <div [formGroupName] ="i" 
           *ngFor="let mortgage of mortgages.controls; let i=index">
-          <div class="card-header" >
+          <div class="card-header bg-default" >
 		        Mortgage
 	        </div>
           <div class="form-row mb-2">
@@ -436,8 +436,8 @@
 
 
        <!-- Judgement Information -->
-      <div>
-        <div class="card-header" st>
+      <div class="card border border-success">
+        <div class="card-header bg-default" st>
 		      Judement
 	      </div>
         <div formGroupName ="judgement" class ="card-body">
@@ -538,8 +538,8 @@
 
 
       <!-- Tax Information -->
-      <div class="card mb-3">
-        <div class="card-header" st>
+      <div class="card border border-success mb-3">
+        <div class="card-header bg-default" st>
 		      Tax
 	      </div>
         <div formGroupName ="tax" class="card-body">
@@ -666,7 +666,7 @@
       <!-- Additional Information -->
       <div>
         <div formGroupName ="additionalInfo" class = "card-body">
-          <div class="form-group bg-success">
+          <div class="form-group bg-default">
             <label class="card-header"
                 for="multipleNames">Multiple Names</label>
             
@@ -679,7 +679,7 @@
            
           </div>
 
-          <div class="form-group bg-success ">
+          <div class="form-group bg-default ">
             <label class=" card-header"
                 for="additionalInfo">Additional Information</label>
             <textarea class="form-control"
@@ -688,7 +688,7 @@
               ></textarea>            
           </div>
 
-          <div class="form-group bg-success">
+          <div class="form-group bg-default">
             <label class="card-header "
                 for="legalDescription">Legal Description</label>
               <textarea class="form-control"
@@ -698,7 +698,7 @@
             
           </div>
 
-          <div class="form-group bg-success">
+          <div class="form-group bg-default">
             <label class="card-header "
                 for="disclaimer">Disclaimer</label>
               <textarea class="form-control"
