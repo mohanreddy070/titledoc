@@ -7,194 +7,199 @@
 		<form novalidate (ngSubmit)="save()" [formGroup]="titleForm">
 
 			<!-- Primary Information -->
-      <div formGroupName="primaryInfo" class="bg-light p-10 card border border-success card-body row-mb-20">
-        <div class="form-row">
-          <div class="form-group col-md-4">
-            <label class="col-form-label"
-                  for="orderNumberId">Order Number</label>				
-              <input class="form-control"
-                    id="orderNumberId"
-                    type="text"
-                    placeholder="Order Number (required)"
-                    formControlName="orderNumber"
-                    [ngClass]="{'is-invalid': (titleForm.get('primaryInfo').get('orderNumber').touched ||
-                                                titleForm.get('primaryInfo').get('orderNumber').dirty) &&
-                                                !titleForm.get('primaryInfo').get('orderNumber').valid }" />
-              <span class="invalid-feedback">
-                <span *ngIf="titleForm.get('primaryInfo').get('orderNumber').errors?.required">
-                  Please enter your order Number.
-                </span>
-              </span>	
-          </div>
-          <div class="form-group col-md-4">
-            <label class=" col-form-label"
-                  for="searchDateId">Search Date</label>
-              <input class="form-control"
-                    id="searchDateId"
-                    type="date"
-                    placeholder="Search Date (required)"
-                    formControlName="searchDate"
-                    [ngClass]="{'is-invalid': (titleForm.get('primaryInfo').get('searchDate').touched ||
-                                                titleForm.get('primaryInfo').get('searchDate').dirty) &&
-                                                !titleForm.get('primaryInfo').get('searchDate').valid }" />
-              <span class="invalid-feedback">
-                <span *ngIf="titleForm.get('primaryInfo').get('searchDate').errors?.required">
-                  Please enter your search date.
-                </span>
-              </span>
-          </div>
-          <div class="form-group col-md-4">
-            <label class="col-form-label"
-                  for="effectiveDateId">Effective Date</label>
-            
-              <input class="form-control"
-                    id="effectiveDateId"
-                    type="date"
-                    placeholder="Effective Date (required)"
-                    formControlName="effectiveDate"
-                    [ngClass]="{'is-invalid': (titleForm.get('primaryInfo').get('effectiveDate').touched ||
-                                                titleForm.get('primaryInfo').get('effectiveDate').dirty) &&
-                                                !titleForm.get('primaryInfo').get('effectiveDate').valid }" />
-              <span class="invalid-feedback">
-                <span *ngIf="titleForm.get('primaryInfo').get('effectiveDate').errors?.required">
-                  Please enter your Effective Date.
-                </span>
-              </span>
-            
-          </div>
+      <div class="card bg-default border border-success">
+        <div class=" card-header bg-default">
+          Property and Owner Information
         </div>
-        <div class="form-row">
-            <label class="col-form-label  "
-                    for="address">Address</label>
-        </div>
-        
-        <div formGroupName="address">
+        <div formGroupName="primaryInfo" class="card-body ">
           <div class="form-row">
-            <div class="form-group col-md-3">
-              <label class="col-form-label  "
-                    for="address">Line-1</label>
-              <input class="form-control"
-                  id="street1Id"
-                  type="text"
-                  placeholder="address( line 1 )"
-                  formControlName="street1"
-                  />
-            </div>
-
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-4">
               <label class="col-form-label"
-                    for="address">Line-2</label>
-              <input class="form-control"
-                  id="street2Id"
-                  type="text"
-                  placeholder="address( line 2 )"
-                  formControlName="street2"
-                  />
+                    for="orderNumberId">Order Number</label>				
+                <input class="form-control form-control-sm"
+                      id="orderNumberId"
+                      type="text"
+                      placeholder="Order Number (required)"
+                      formControlName="orderNumber"
+                      [ngClass]="{'is-invalid': (titleForm.get('primaryInfo').get('orderNumber').touched ||
+                                                  titleForm.get('primaryInfo').get('orderNumber').dirty) &&
+                                                  !titleForm.get('primaryInfo').get('orderNumber').valid }" />
+                <span class="invalid-feedback">
+                  <span *ngIf="titleForm.get('primaryInfo').get('orderNumber').errors?.required">
+                    Please enter your order Number.
+                  </span>
+                </span>	
             </div>
-
-            <div class="form-group col-md-3">
-              <label class="col-form-label"
-                    for="city">City</label>
-              <input class="form-control"
-                id="city"
-                type="text"
-                placeholder="city"
-                formControlName="city"
-                />
+            <div class="form-group col-md-4">
+              <label class=" col-form-label"
+                    for="searchDateId">Search Date</label>
+                <input class="form-control form-control-sm"
+                      id="searchDateId"
+                      type="date"
+                      placeholder="Search Date (required)"
+                      formControlName="searchDate"
+                      [ngClass]="{'is-invalid': (titleForm.get('primaryInfo').get('searchDate').touched ||
+                                                  titleForm.get('primaryInfo').get('searchDate').dirty) &&
+                                                  !titleForm.get('primaryInfo').get('searchDate').valid }" />
+                <span class="invalid-feedback">
+                  <span *ngIf="titleForm.get('primaryInfo').get('searchDate').errors?.required">
+                    Please enter your search date.
+                  </span>
+                </span>
             </div>
-
-            
-            <div class="col-md-3">
+            <div class="form-group col-md-4">
               <label class="col-form-label"
-                    for="address">State</label>
-              <input class="form-control"
-                id="state"
-                type="text"
-                placeholder="state"
-                formControlName="state"
-                />
-            </div>
-
-            
-            <div class="col-md-2">
-              <label class="col-form-label"
-                    for="address">Zip</label>
-              <input class="form-control"
-                id="zip"
-                type="number"
-                placeholder="zip"
-                formControlName="zip"
-                />
-            </div>
-
-            
-            <div class="col-md-3">
-              <label class="col-form-label"
-                    for="address">Parcel No</label>
-              <input class="form-control"
-                id="parcelNo"
-                type="text"
-                placeholder="parcel No"
-                formControlName="parcelNo"
-                />
-            </div>
-
-            
-            <div class="col-md-2">
-              <label class="col-form-label"
-                    for="address">Lot</label>
-              <input class="form-control"
-                id="lot"
-                type="text"
-                placeholder="lot"
-                formControlName="lot"
-                />
-            </div>
-
-            
-            <div class="col-md-2">
-              <label class="col-form-label"
-                    for="address">Block</label>
-              <input class="form-control"
-                id="block"
-                type="text"
-                placeholder="Block"
-                formControlName="block"
-                />
-            </div>
-
-            
-            <div class="col-md-3">
-              <label class="col-form-label"
-                    for="address">Sub Division</label>
-              <input class="form-control"
-                id="subDivision"
-                type="text"
-                placeholder="sub Division"
-                formControlName="subDivision"
-                />
+                    for="effectiveDateId">Effective Date</label>
+              
+                <input class="form-control form-control-sm"
+                      id="effectiveDateId"
+                      type="date"
+                      placeholder="Effective Date (required)"
+                      formControlName="effectiveDate"
+                      [ngClass]="{'is-invalid': (titleForm.get('primaryInfo').get('effectiveDate').touched ||
+                                                  titleForm.get('primaryInfo').get('effectiveDate').dirty) &&
+                                                  !titleForm.get('primaryInfo').get('effectiveDate').valid }" />
+                <span class="invalid-feedback">
+                  <span *ngIf="titleForm.get('primaryInfo').get('effectiveDate').errors?.required">
+                    Please enter your Effective Date.
+                  </span>
+                </span>
+              
             </div>
           </div>
+          <div class="form-row">
+              <label class="col-form-label  "
+                      for="address">Address</label>
+          </div>
+          
+          <div formGroupName="address">
+            <div class="form-row">
+              <div class="form-group col-md-3">
+                <label class="col-form-label  "
+                      for="address">Line-1</label>
+                <input class="form-control form-control-sm"
+                    id="street1Id"
+                    type="text"
+                    placeholder="address( line 1 )"
+                    formControlName="street1"
+                    />
+              </div>
+
+              <div class="form-group col-md-3">
+                <label class="col-form-label"
+                      for="address">Line-2</label>
+                <input class="form-control form-control-sm"
+                    id="street2Id"
+                    type="text"
+                    placeholder="address( line 2 )"
+                    formControlName="street2"
+                    />
+              </div>
+
+              <div class="form-group col-md-3">
+                <label class="col-form-label"
+                      for="city">City</label>
+                <input class="form-control form-control-sm"
+                  id="city"
+                  type="text"
+                  placeholder="city"
+                  formControlName="city"
+                  />
+              </div>
+
+              
+              <div class="col-md-3">
+                <label class="col-form-label"
+                      for="address">State</label>
+                <input class="form-control form-control-sm"
+                  id="state"
+                  type="text"
+                  placeholder="state"
+                  formControlName="state"
+                  />
+              </div>
+
+              
+              <div class="col-md-2">
+                <label class="col-form-label"
+                      for="address">Zip</label>
+                <input class="form-control form-control-sm"
+                  id="zip"
+                  type="number"
+                  placeholder="zip"
+                  formControlName="zip"
+                  />
+              </div>
+
+              
+              <div class="col-md-3">
+                <label class="col-form-label"
+                      for="address">Parcel No</label>
+                <input class="form-control form-control-sm"
+                  id="parcelNo"
+                  type="text"
+                  placeholder="parcel No"
+                  formControlName="parcelNo"
+                  />
+              </div>
+
+              
+              <div class="col-md-2">
+                <label class="col-form-label"
+                      for="address">Lot</label>
+                <input class="form-control form-control-sm"
+                  id="lot"
+                  type="text"
+                  placeholder="lot"
+                  formControlName="lot"
+                  />
+              </div>
+
+              
+              <div class="col-md-2">
+                <label class="col-form-label"
+                      for="address">Block</label>
+                <input class="form-control form-control-sm"
+                  id="block"
+                  type="text"
+                  placeholder="Block"
+                  formControlName="block"
+                  />
+              </div>
+
+              
+              <div class="col-md-3">
+                <label class="col-form-label"
+                      for="address">Sub Division</label>
+                <input class="form-control form-control-sm"
+                  id="subDivision"
+                  type="text"
+                  placeholder="sub Division"
+                  formControlName="subDivision"
+                  />
+              </div>
+            </div>
 
 
+          </div>
         </div>
       </div>
 
 
       <!-- Deed Information -->
-      <div formArrayName="deeds" class="card border border-success mb-3 bg-light">
+      <div formArrayName="deeds" class="card border border-success">
         
         <div [formGroupName] ="i" 
           *ngFor="let deed of deeds.controls; let i=index">
-          <div class="card-header bg-default" st>
-		      Deed#{{i+1}}
-	      </div>
+          <div class="card-header bg-default" >
+		        Deed#{{i+1}}
+	        </div>
           <div class="card-body form-row">
             
             <div class="col-md-3 form-group ">
               <label class="col-form-label "
                 attr.for="{{'deedType' + i}}">Deed Type</label>
-              <input class="form-control"
+              <input class="form-control form-control-sm "
                 id="{{'deedType' + i}}"
                 type="text"
                 placeholder="Deed Type"
@@ -206,7 +211,7 @@
             <div class="col-md-3 form-group ">
               <label class="col-form-label "
                 for="considerationAmount">Consideration Amount</label>
-              <input class="form-control"
+              <input class="form-control form-control-sm"
                 id="considerationAmount"
                 type="text"
                 placeholder="Consideration Amount"
@@ -218,7 +223,7 @@
             <div class="col-md-3 form-group ">
               <label class="col-form-label "  
                 for="grantor">Grantor</label>
-              <input class="form-control"
+              <input class="form-control form-control-sm"
                 id="grantor"
                 type="text"
                 placeholder="Grantor"
@@ -230,7 +235,7 @@
             <div class="col-md-3 form-group ">
               <label class="col-form-label "
                 for="grantee">Grantee</label>
-              <input class="form-control"
+              <input class="form-control form-control-sm"
                 id="grantee"
                 type="text"
                 placeholder="Grantee"
@@ -242,7 +247,7 @@
             <div class="col-md-3 form-group ">
               <label class="col-form-label "
                 for="vesting">Vesting</label>
-              <input class="form-control"
+              <input class="form-control form-control-sm"
                 id="vesting"
                 type="text"
                 placeholder="Vesting"
@@ -254,7 +259,7 @@
             <div class="col-md-3 form-group ">
               <label class="col-form-label "
                 for="iBP"> Instrument/Book/Page </label>
-              <input class="form-control"
+              <input class="form-control form-control-sm"
                 id="iBP"
                 type="text"
                 formControlName="iBP"
@@ -265,7 +270,7 @@
             <div class="col-md-3 form-group ">
               <label class="col-form-label "
                 for="datedDate">Dated Date</label>
-              <input class="form-control"
+              <input class="form-control form-control-sm"
                 id="datedDate"
                 type="date"
                 formControlName="datedDate"
@@ -276,7 +281,7 @@
             <div class="col-md-3 form-group ">
               <label class="col-form-label "
                 for="recordedDate">Recorded Date</label>
-              <input class="form-control"
+              <input class="form-control form-control-sm"
                 id="recordedDate"
                 type="date"
                 formControlName="recordedDate"
@@ -289,7 +294,7 @@
               <label class="col-form-label "
                 for="note">Note</label>
               <textarea 
-                class="form-control"
+                class="form-control form-control-sm"
                 formControlName="note"
                 ></textarea>
             </div>
@@ -321,7 +326,7 @@
             <div class="col-md-3 form-group">
               <label class="col-form-label"
                 for="mortgagor">Mortgagor</label>
-              <input class="form-control"
+              <input class="form-control form-control-sm"
                 id="mortgagor"
                 type="text"
                 placeholder="Mortgagor"
@@ -333,7 +338,7 @@
             <div class="col-md-3 form-group">
               <label class="col-form-label "
                 for="mortgagee">Mortgagee</label>
-              <input class="form-control"
+              <input class="form-control form-control-sm"
                 id="mortgagee"
                 type="text"
                 placeholder="Mortgagee"
@@ -345,7 +350,7 @@
             <div class="col-md-3 form-group">
               <label class="col-form-label "
                 for="grantor">Grantor</label>
-              <input class="form-control"
+              <input class="form-control form-control-sm"
                 id="grantor"
                 type="text"
                 placeholder="Grantor"
@@ -357,7 +362,7 @@
             <div class="col-md-3 form-group">
               <label class="col-form-label"
                 for="trustee">Trustee</label>
-              <input class="form-control"
+              <input class="form-control form-control-sm"
                 id="trustee"
                 type="text"
                 placeholder="Trustee"
@@ -369,7 +374,7 @@
             <div class="col-md-3 form-group">
               <label class="col-form-label "
                 for="iBP"> Instrument/Book/Page </label>
-              <input class="form-control"
+              <input class="form-control form-control-sm"
                 id="iBP"
                 type="text"
                 formControlName="iBP"
@@ -380,7 +385,7 @@
             <div class="col-md-2 form-group">
               <label class="col-form-label"
                 for="amount">Amount</label>
-              <input class="form-control"
+              <input class="form-control form-control-sm"
                 id="amount"
                 type="text"
                 formControlName="amount"
@@ -390,7 +395,7 @@
             <div class="col-md-3 form-group">
               <label class="col-form-label"
                 for="datedDate">Dated Date</label>
-              <input class="form-control"
+              <input class="form-control form-control-sm"
                 id="datedDate"
                 type="date"
                 formControlName="datedDate"
@@ -401,7 +406,7 @@
             <div class="col-md-3 form-group">
               <label class="col-form-label"
                 for="recordedDate">Recorded Date</label>
-              <input class="form-control"
+              <input class="form-control form-control-sm"
                 id="recordedDate"
                 type="date"
                 formControlName="recordedDate"
@@ -412,7 +417,7 @@
             <div class="col-md-12 ">
               <label class="col-form-label"
                 for="note">Note</label>
-              <textarea class="form-control"
+              <textarea class="form-control form-control-sm"
                 id="note"
                 formControlName="note"
                 ></textarea>
@@ -446,7 +451,7 @@
             <div class="form-group col-md-4">
               <label class="col-form-label "
                 for="judgementType">Judgement Type</label>
-              <input class="form-control"
+              <input class="form-control form-control-sm"
                 id="judgementType"
                 type="text"
                 placeholder="Judgement Type"
@@ -458,7 +463,7 @@
             <div class="form-group col-md-4">
                <label class="col-form-label"
                 for="plaintIf">Plaint If</label>
-              <input class="form-control"
+              <input class="form-control form-control-sm"
                 id="plaintIf"
                 type="text"
                 placeholder="Plaint If"
@@ -470,7 +475,7 @@
             <div class="form-group col-md-4">
               <label class="col-form-label"
                 for="defendant">Defendant</label>
-              <input class="form-control"
+              <input class="form-control form-control-sm"
                 id="defendant"
                 type="text"
                 placeholder="Defendant"
@@ -482,7 +487,7 @@
             <div class="form-group col-md-3">
               <label class="col-form-label"
                 for="datedDate">Dated Date</label>
-              <input class="form-control"
+              <input class="form-control form-control-sm"
                 id="datedDate"
                 type="date"
                 formControlName="datedDate"
@@ -493,7 +498,7 @@
             <div class="form-group col-md-3">
               <label class="col-form-label"
                 for="recordedDate">Recorded Date</label>
-              <input class="form-control"
+              <input class="form-control form-control-sm"
                 id="recordedDate"
                 type="date"
                 formControlName="recordedDate"
@@ -504,7 +509,7 @@
             <div class="form-group col-md-3">
               <label class="col-form-label"
                 for="caseNo">Case Number</label>
-              <input class="form-control"
+              <input class="form-control form-control-sm"
                 id="caseNo"
                 type="text"
                 placeholder="Case No"
@@ -516,7 +521,7 @@
             <div class="form-group col-md-3">
               <label class="col-form-label"
                 for="judgementAmount">Judgement Amount</label>
-              <input class="form-control"
+              <input class="form-control form-control-sm"
                 id="judgementAmount"
                 type="text"
                 formControlName="judgementAmount"
@@ -527,7 +532,7 @@
           <div class="form-group">
             <label class="col-md-1 row mb-2"
               for="comments">Comments</label>
-            <textarea class="form-control"
+            <textarea class="form-control form-control-sm"
               id="comments"
               formControlName="comments"
               ></textarea>
@@ -548,7 +553,7 @@
             <div class="form-group col-md-3 ">
               <label class="col-form-label "
                 for="assesmentYear">Assesment Year</label>
-              <input class="form-control"
+              <input class="form-control form-control-sm"
                 id="assesmentYear"
                 type="text"
                 placeholder="Assesment Year"
@@ -560,7 +565,7 @@
             <div class="form-group col-md-3">
               <label class="col-form-label "
                 for="taxYear">Tax Year</label>
-              <input class="form-control"
+              <input class="form-control form-control-sm"
                 id="taxYear"
                 type="text"
                 placeholder="Tax Year"
@@ -571,7 +576,7 @@
             <div class="form-group col-md-3">
               <label class="col-form-label"
                 for="landValue">Land Value</label>
-              <input class="form-control"
+              <input class="form-control form-control-sm"
                 id="landValue"
                 type="text"
                 placeholder="Land Value"
@@ -582,7 +587,7 @@
             <div class="form-group col-md-3">
               <label class="col-form-label"
                 for="buildingValue">Building Value</label>
-              <input class="form-control"
+              <input class="form-control form-control-sm"
                 id="buildingValue"
                 type="text"
                 placeholder="Building Value"
@@ -593,7 +598,7 @@
             <div class="form-group col-md-3">
               <label class="col-form-label"
                 for="totalValue">Total Value</label>
-              <input class="form-control"
+              <input class="form-control form-control-sm"
                 id="totalValue"
                 type="text"
                 placeholder="Total Value"
@@ -604,7 +609,7 @@
             <div class="form-group col-md-3">
               <label class="col-form-label"
                 for="exemption">Exemption</label>
-              <input class="form-control"
+              <input class="form-control form-control-sm"
                 id="exemption"
                 type="text"
                 placeholder="Exemption"
@@ -612,53 +617,56 @@
                 />
             </div>
 
-            <div formGroupName ="taxes">
-              <div class="form-group row mb-2">
-                <label class="col-md-2 "
-                    for="installment">Installment</label>
-                <div class="col-md-3 row mb-2">
-                  <input class="form-control"
+            
+          </div>
+          <table formArrayName="installments" class="table">
+            <tr>
+              <th>Installment</th>
+              <th>Amount</th>
+              <th>Status</th>
+              <th>Paid/Due Date</th>
+            </tr>
+            <tr [formGroupName] ="i" 
+              *ngFor="let installment of installments.controls; let i=index">
+              <td>
+                <input class="form-control form-control-sm"
                     id="installment"
                     type="text"
                     placeholder="Installment"
                     formControlName="installment"
                     />
-                </div>
-
-                <label class="col-md-2 "
-                    for="amount">Amount</label>
-                <div class="col-md-3 row mb-2">
-                  <input class="form-control"
+              </td>
+              <td>
+                <input class="form-control form-control-sm"
                     id="amount"
                     type="text"
                     placeholder="Amount"
                     formControlName="amount"
                     />
-                </div>
-                <label class="col-md-2 "
-                    for="status">Status</label>
-                <div class="col-md-3 row mb-2">
-                  <input class="form-control"
+              </td>
+              <td>
+                <input class="form-control form-control-sm"
                     id="status"
                     type="text"
                     placeholder="Status"
                     formControlName="status"
                     />
-                </div>
-                <label class="col-md-2 "
-                    for="paidDueDate">Paid Due Date</label>
-                <div class="col-md-3 row mb-2">
-                  <input class="form-control"
+              </td>
+              <td>
+                <input class="form-control form-control-sm"
                     id="paidDueDate"
                     type="date"
                     formControlName="paidDueDate"
                     />
-                </div>
-
-                
-              </div>
-            </div>
-          </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button class="btn-success" 
+                  (click)="addInstallment()"
+              </td>
+            </tr>
+          </table>
         </div>
       </div>
 			
@@ -670,7 +678,7 @@
             <label class="card-header"
                 for="multipleNames">Multiple Names</label>
             
-              <textarea class="form-control"
+              <textarea class="form-control form-control-sm"
                 id="multipleNames"
                 type="text"
                 placeholder="Enter Multiple Names"
@@ -682,7 +690,7 @@
           <div class="form-group bg-default ">
             <label class=" card-header"
                 for="additionalInfo">Additional Information</label>
-            <textarea class="form-control"
+            <textarea class="form-control form-control-sm"
               id="additionalInfo"
               formControlName="additionalInfo"
               ></textarea>            
@@ -691,7 +699,7 @@
           <div class="form-group bg-default">
             <label class="card-header "
                 for="legalDescription">Legal Description</label>
-              <textarea class="form-control"
+              <textarea class="form-control form-control-sm"
                 id="legalDescription"
                 formControlName="legalDescription"
                 ></textarea>
@@ -701,7 +709,7 @@
           <div class="form-group bg-default">
             <label class="card-header "
                 for="disclaimer">Disclaimer</label>
-              <textarea class="form-control"
+              <textarea class="form-control form-control-sm"
                 id="disclaimer"
                 type="text"
                 placeholder="Disclaimer"

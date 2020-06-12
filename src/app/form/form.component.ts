@@ -25,6 +25,10 @@ export class FormComponent implements OnInit {
   get mortgages(): FormArray {
     return this.titleForm.get('mortgages') as FormArray;
   }
+
+  get installments(): FormArray {
+    return this.titleForm.get('tax').get('installments') as FormArray;
+  }
   
  
   constructor(private db: DataService, private fb: FormBuilder, private router: Router) {}
@@ -67,12 +71,7 @@ export class FormComponent implements OnInit {
         buildingValue: ["", [Validators.required]],
         totalValue: ["", [Validators.required]],
         exemption: ["", [Validators.required]],
-        taxes:this.fb.group({
-          installment: ["", [Validators.required]],
-          amount: ["", [Validators.required]],
-          status: ["", [Validators.required]],
-          paidDueDate: ["", [Validators.required]]
-        })
+        installments:this.fb.array([this.buildInstallment()])
 
       }),
       additionalInfo:this.fb.group({
@@ -121,6 +120,20 @@ export class FormComponent implements OnInit {
         recordedDate: ["", [Validators.required]],
         note: ["", [Validators.required]],
 
+      })
+  }
+
+  //taxes
+  addInstallment(){
+    this.mortgages.push(this.buildInstallment());
+  }
+
+  buildInstallment(): FormGroup{
+    return this.fb.group({
+        installment: ["", [Validators.required]],
+        amount: ["", [Validators.required]],
+        status: ["", [Validators.required]],
+        paidDueDate: ["", [Validators.required]]
       })
   }
 
