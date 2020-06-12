@@ -26,6 +26,10 @@ export class FormComponent implements OnInit {
     return this.titleForm.get('mortgages') as FormArray;
   }
 
+  get judgements(): FormArray {
+    return this.titleForm.get('judgements') as FormArray;
+  }
+
   get installments(): FormArray {
     return this.titleForm.get('tax').get('installments') as FormArray;
   }
@@ -53,17 +57,7 @@ export class FormComponent implements OnInit {
       }),
       deeds:this.fb.array([this.buildDeed()]),
       mortgages:this.fb.array([]),
-      judgement:this.fb.group({
-        judgementType: ["", [Validators.required]],
-        plaintIf: ["", [Validators.required]],
-        defendant: ["", [Validators.required]],
-        datedDate: ["", [Validators.required]],
-        recordedDate: ["", [Validators.required]],
-        caseNo: ["", [Validators.required]],
-        judgementAmount: ["", [Validators.required]],
-        comments: ["", [Validators.required]],
-
-      }),
+      judgements:this.fb.array([]),
       tax:this.fb.group({
         assesmentYear: ["", [Validators.required]],
         taxYear: ["", [Validators.required]],
@@ -123,9 +117,29 @@ export class FormComponent implements OnInit {
       })
   }
 
+  //judgements
+  addJudgements(){
+    this.judgements.push(this.buildJudgement());
+  }
+
+  buildJudgement(): FormGroup{
+    return this.fb.group({
+        judgementType: ["", [Validators.required]],
+        plaintIf: ["", [Validators.required]],
+        defendant: ["", [Validators.required]],
+        datedDate: ["", [Validators.required]],
+        recordedDate: ["", [Validators.required]],
+        caseNo: ["", [Validators.required]],
+        judgementAmount: ["", [Validators.required]],
+        comments: ["", [Validators.required]],
+
+      })
+
+  }
+
   //taxes
   addInstallment(){
-    this.mortgages.push(this.buildInstallment());
+    this.installments.push(this.buildInstallment());
   }
 
   buildInstallment(): FormGroup{

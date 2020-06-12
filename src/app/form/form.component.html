@@ -441,11 +441,13 @@
 
 
        <!-- Judgement Information -->
-      <div class="card border border-success">
-        <div class="card-header bg-default" st>
-		      Judement
-	      </div>
-        <div formGroupName ="judgement" class ="card-body">
+      <div formArrayName="judgements" class="card border border-success">
+        
+        <div [formGroupName] ="i" 
+          *ngFor="let judgement of judgements.controls; let i=index">
+          <div class="card-header bg-default" st>
+		        Judement#{{i+1}}
+	        </div>
           <div class="form-row ">
             
             <div class="form-group col-md-4">
@@ -538,6 +540,15 @@
               ></textarea>
           </div>
 
+        </div>
+        <div class="mx-auto">
+          <button class="btn btn-outline-primary"
+                    type="button"
+                    [title]="judgements.valid ? 'Add another judgement' : 'Disabled until the existing judgement data is valid'"
+                    [disabled]="!judgements.valid"
+                    (click)="addJudgement()">
+              Add Judgement
+            </button>
         </div>
       </div>
 
@@ -663,6 +674,7 @@
             <tr>
               <td>
                 <button class="btn-success" 
+                  type="button"
                   (click)="addInstallment()">Add Installment</button>
               </td>
             </tr>
