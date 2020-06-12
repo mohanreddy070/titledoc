@@ -118,7 +118,7 @@ export class FormComponent implements OnInit {
   }
 
   //judgements
-  addJudgements(){
+  addJudgement(){
     this.judgements.push(this.buildJudgement());
   }
 
