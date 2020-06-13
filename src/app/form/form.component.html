@@ -305,6 +305,7 @@
           <button class="btn btn-outline-primary"
                     type="button"
                     [title]="deeds.valid ? 'Add another deed' : 'Disabled until the existing deed data is valid'"
+                    [disabled]="!deeds.valid"
                     (click)="addDeed()">
               Add Another Deed
             </button>
@@ -744,6 +745,19 @@
             [title]="titleForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'">
             <!--add for valid     [disabled]="!titleForm.valid"-->
             Save
+          </button>
+
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <div class="offset-md-2 col-md-4">
+          <button class="btn btn-primary mr-3"
+            type="button"
+            (click)="print()"
+            [title]="titleForm.valid ? 'Print your entered data' : 'Disabled until the form data is valid'">
+            <!--add for valid     [disabled]="!titleForm.valid"-->
+            Print
           </button>
 
         </div>

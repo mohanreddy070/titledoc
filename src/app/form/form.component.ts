@@ -8,6 +8,7 @@ import {
   FormArray
 } from "@angular/forms";
 import {DataService} from "../../data.service";
+import {PrintService} from "../print.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -35,7 +36,7 @@ export class FormComponent implements OnInit {
   }
   
  
-  constructor(private db: DataService, private fb: FormBuilder, private router: Router) {}
+  constructor(private db: DataService, private ps: PrintService, private fb: FormBuilder, private router: Router) {}
 
   ngOnInit() {
     this.titleForm = this.fb.group({
@@ -156,6 +157,11 @@ export class FormComponent implements OnInit {
     //console.log(JSON.stringify(this.titleForm.value));
     this.db.addData(this.titleForm.value);
     this.router.navigate(['/', 'result']);
+  }
+
+//print action
+  print(){
+    this.ps.printDocument();
   }
 
 }

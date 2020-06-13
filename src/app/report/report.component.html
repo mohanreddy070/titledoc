@@ -1,9 +1,9 @@
-<div class="card">
-	<div class="card-header mx-auto" >
+<div class="card m-20">
+	<h3 class=" mx-auto" >
 		Title Report
-	</div>
-  <div class="row">
-    <table class="table" *ngFor="let deed of data.deeds">
+	</h3>
+  <div class="row-md-19">
+    <table class="table table-bordered table-sm" *ngFor="let deed of data.deeds">
   <thead class="bg-success">
     <tr>
       <th colspan="2">Deed Information</th>
@@ -34,7 +34,7 @@
   </div>
 
   <div>
-    <table class="table" *ngFor="let mortgage of data.mortgages">
+    <table class="table table-bordered" *ngFor="let mortgage of data.mortgages">
   <thead class="bg-success">
     <tr>
       <th colspan="2">Mortgage Information</th>
