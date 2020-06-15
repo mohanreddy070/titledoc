@@ -1,67 +1,131 @@
 <div class="card m-20">
-	<h3 class=" mx-auto" >
+	<h3 class=" mx-auto">
 		Title Report
 	</h3>
-  <router-outlet></router-outlet>
-  <div class="row-md-19">
-    <table class="table table-bordered table-sm" *ngFor="let deed of data.deeds">
-  <thead class="bg-success">
-    <tr>
-      <th colspan="2">Deed Information</th>
-    </tr>
-  </thead>
-  <tbody  class="bg-light">
-    <tr>
-      <td ><b>Deed Type :</b> {{deed.deedType}}</td>
-      <td ><b>Consideration Amount :</b> {{deed.considerationAmount}}</td>
-    </tr>
-    <tr>
-      <td ><b>Grantor :</b> {{deed.grantor}}</td>
-      <td ><b>Grantee :</b> {{deed.grantee}}</td>
-    </tr>
-    <tr>
-      <td ><b>Vesting :</b> {{deed.vesting}}</td>
-      <td ><b>Instrument/Book/Page :</b> {{deed.iBP}}</td>
-    </tr>
-    <tr>
-      <td ><b>Dated Date :</b> {{deed.datedDate}}</td>
-      <td ><b>Recorded Date :</b> {{deed.recordedDate}}</td>
-    </tr>
-    <tr>
-      <td colspan="2"><b>Note :</b> {{deed.note}}</td>
-    </tr>
-  </tbody>
-</table>
+	<div>
+    <table class="table table-bordered table-sm" >
+			<thead class="bg-success">
+				<tr>
+					<th colspan="3">Property & Owner Information</th>
+				</tr>
+			</thead>
+			<tbody class="bg-light">
+				<tr>
+					<td><b>Order Number :</b> {{data.primaryInfo.orderNumber}}</td>
+					<td><b>Search Date :</b> {{data.primaryInfo.searchDate}}</td>
+          <td><b>Effective Date :</b> {{data.primaryInfo.effectiveDate}}</td>
+				</tr>
+				<tr>
+					<td colspan="3"><b>Address :</b><br>
+            {{data.primaryInfo.address.street1}}, 
+            {{data.primaryInfo.address.street2}}, 
+            {{data.primaryInfo.address.city}}, 
+            {{data.primaryInfo.address.state}}, 
+            Zip : 
+            {{data.primaryInfo.address.zip}}, 
+            parcel.No : 
+            {{data.primaryInfo.address.parcelNo}}, 
+            lot : 
+            {{data.primaryInfo.address.lot}}, 
+            block : 
+            {{data.primaryInfo.address.block}},
+            sub-Division : 
+            {{data.primaryInfo.address.subDivision}},
+            </td>
+				</tr>
+			</tbody>
+		</table>
   </div>
 
+	<div class="row-md-19">
+		<table class="table table-bordered table-sm" *ngFor="let deed of data.deeds">
+			<thead class="bg-success">
+				<tr>
+					<th colspan="2">Deed Information</th>
+				</tr>
+			</thead>
+			<tbody class="bg-light">
+				<tr>
+					<td><b>Deed Type :</b> {{deed.deedType}}</td>
+					<td><b>Consideration Amount :</b> {{deed.considerationAmount}}</td>
+				</tr>
+				<tr>
+					<td><b>Grantor :</b> {{deed.grantor}}</td>
+					<td><b>Grantee :</b> {{deed.grantee}}</td>
+				</tr>
+				<tr>
+					<td><b>Vesting :</b> {{deed.vesting}}</td>
+					<td><b>Instrument/Book/Page :</b> {{deed.iBP}}</td>
+				</tr>
+				<tr>
+					<td><b>Dated Date :</b> {{deed.datedDate}}</td>
+					<td><b>Recorded Date :</b> {{deed.recordedDate}}</td>
+				</tr>
+				<tr>
+					<td colspan="2"><b>Note :</b> {{deed.note}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div>
+		<table class="table table-bordered" *ngFor="let mortgage of data.mortgages">
+			<thead class="bg-success">
+				<tr>
+					<th colspan="2">Mortgage Information</th>
+				</tr>
+			</thead>
+			<tbody class="bg-light">
+				<tr>
+					<td><b>Mortgagor :</b> {{mortgage.mortgagor}}</td>
+					<td><b>Mortgagee :</b> {{mortgage.mortgagee}}</td>
+				</tr>
+				<tr>
+					<td><b>Grantor :</b> {{mortgage.grantor}}</td>
+					<td><b>Trustee :</b> {{mortgage.trustee}}</td>
+				</tr>
+				<tr>
+					<td><b>Instrument/Book/Page :</b> {{mortgage.iBP}}</td>
+					<td><b>Amount :</b> {{mortgage.amount}}</td>
+				</tr>
+				<tr>
+					<td><b>Dated Date :</b> {{mortgage.datedDate}}</td>
+					<td><b>Recorded Date :</b> {{mortgage.recordedDate}}</td>
+				</tr>
+				<tr>
+					<td colspan="2"><b>Note :</b> {{mortgage.note}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
   <div>
-    <table class="table table-bordered" *ngFor="let mortgage of data.mortgages">
-  <thead class="bg-success">
-    <tr>
-      <th colspan="2">Mortgage Information</th>
-    </tr>
-  </thead>
-  <tbody  class="bg-light">
-    <tr>
-      <td ><b>Mortgagor :</b> {{mortgage.mortgagor}}</td>
-      <td ><b>Mortgagee :</b> {{mortgage.mortgagee}}</td>
-    </tr>
-    <tr>
-      <td ><b>Grantor :</b> {{mortgage.grantor}}</td>
-      <td ><b>Trustee :</b> {{mortgage.trustee}}</td>
-    </tr>
-    <tr>
-      <td ><b>Instrument/Book/Page :</b> {{mortgage.iBP}}</td>
-      <td ><b>Amount :</b> {{mortgage.amount}}</td>
-    </tr>
-    <tr>
-      <td ><b>Dated Date :</b> {{mortgage.datedDate}}</td>
-      <td ><b>Recorded Date :</b> {{mortgage.recordedDate}}</td>
-    </tr>
-    <tr>
-      <td colspan="2"><b>Note :</b> {{mortgage.note}}</td>
-    </tr>
-  </tbody>
-</table>
-  </div>
+		<table class="table table-bordered" *ngFor="let judgement of data.judgements">
+			<thead class="bg-success">
+				<tr>
+					<th colspan="2">Judgement Information</th>
+				</tr>
+			</thead>
+			<tbody class="bg-light">
+				<tr>
+					<td><b>Judgement Type :</b> {{mortgage.mortgagor}}</td>
+					<td><b>Plaint If :</b> {{mortgage.mortgagee}}</td>
+				</tr>
+				<tr>
+					<td><b>defandant :</b> {{mortgage.grantor}}</td>
+					<td><b>Dated Date :</b> {{mortgage.trustee}}</td>
+				</tr>
+				<tr>
+					<td><b>Recorded Date :</b> {{mortgage.iBP}}</td>
+          <td colspan="0.5"><b>Case No :</b> {{mortgage.iBP}}</td>
+					<td colspan="0.5"><b>Amount :</b> {{mortgage.amount}}</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2"><b>Note :</b> {{mortgage.note}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
 </div>

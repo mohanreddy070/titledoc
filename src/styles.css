@@ -1,6 +1,2 @@
 /* Add application styles & imports to this file! */;
 
-@media print {
-  .isPrinting > * { display: none; }
-  .isPrinting app-report { display: block; }
-}

@@ -14,7 +14,9 @@ export class ReportComponent implements OnInit {
 
   ngOnInit() {
     this.data = this.db.getData();
-    this.ps.onDataReady();
+    if(this.ps.isPrinting){
+      this.ps.onDataReady();
+    }
     console.log(JSON.stringify(this.data))
 
 
