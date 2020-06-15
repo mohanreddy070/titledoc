@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'result', component: ReportComponent },
    { path: 'print',
     outlet: 'print',
-    component: PrintComponent,
+    component: ReportComponent,
   }
 ];
 
