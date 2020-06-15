@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router'; 
 import { FormComponent } from './form/form.component';
 import { ReportComponent } from './report/report.component';
-import {} from '../print/print.component';
+import { PrintComponent} from './print/print.component';
 
 const routes: Routes = [
   { path: '', component:  FormComponent},
@@ -10,9 +10,6 @@ const routes: Routes = [
    { path: 'print',
     outlet: 'print',
     component: PrintComponent,
-    children: [
-      { path: 'invoice/:invoiceIds', component: InvoiceComponent }
-    ]
   }
 ];
 
