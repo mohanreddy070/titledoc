@@ -3,7 +3,7 @@
 		Title Report
 	</h3>
 	<div>
-    <table class="table table-bordered table-sm" >
+    <table class="table table-bordered " >
 			<thead class="bg-success">
 				<tr>
 					<th colspan="3">Property & Owner Information</th>
@@ -38,7 +38,7 @@
   </div>
 
 	<div class="row-md-19">
-		<table class="table table-bordered table-sm" *ngFor="let deed of data.deeds">
+		<table class="table table-bordered " *ngFor="let deed of data.deeds">
 			<thead class="bg-success">
 				<tr>
 					<th colspan="2">Deed Information</th>
@@ -131,7 +131,7 @@
 	</div>
 
   <div class="row-md-19">
-		<table class="table table-bordered table-sm" >
+		<table class="table table-bordered " >
 			<thead class="bg-success">
 				<tr>
 					<th colspan="2">Tax Information</th>
@@ -175,36 +175,36 @@
 	</div>
 
   <div>
-    <table>
+    <table class="table table-bordered">
       <tbody>
-      <tr><th class="mx-auto">Multiple Names</th></tr>
+      <tr><th class="bg-success">Multiple Names</th></tr>
       <tr><td>{{data.additionalInfo.multipleNames}}</td></tr>
       </tbody>
     </table>
   </div>
 
   <div>
-    <table>
+    <table class="table table-bordered">
       <tbody>
-      <tr><th class="mx-auto">Additional Information</th></tr>
+      <tr><th class="bg-success">Additional Information</th></tr>
       <tr><td>{{data.additionalInfo.additionalInfo}}</td></tr>
       </tbody>
     </table>
   </div>
 
   <div>
-    <table>
+    <table class="table table-bordered">
       <tbody>
-      <tr><th class="mx-auto">Legal Description</th></tr>
+      <tr><th class="bg-success">Legal Description</th></tr>
       <tr><td>{{data.additionalInfo.legalDescription}}</td></tr>
       </tbody>
     </table>
   </div>
 
   <div>
-    <table>
+    <table class="table table-bordered">
       <tbody>
-      <tr><th class="mx-auto">Disclaimer</th></tr>
+      <tr><th class="bg-success">Disclaimer</th></tr>
       <tr><td>{{data.additionalInfo.disclaimer}}</td></tr>
       </tbody>
     </table>
