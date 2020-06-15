@@ -108,24 +108,77 @@
 			</thead>
 			<tbody class="bg-light">
 				<tr>
-					<td><b>Judgement Type :</b> {{mortgage.mortgagor}}</td>
-					<td><b>Plaint If :</b> {{mortgage.mortgagee}}</td>
+					<td><b>Judgement Type :</b> {{judgement.judgementType}}</td>
+					<td><b>Plaint If :</b> {{judgement.plaintIf}}</td>
 				</tr>
 				<tr>
-					<td><b>defandant :</b> {{mortgage.grantor}}</td>
-					<td><b>Dated Date :</b> {{mortgage.trustee}}</td>
+					<td><b>Defendant :</b> {{judgement.defendant}}</td>
+					<td><b>Dated Date :</b> {{judgement.datedDate}}</td>
 				</tr>
 				<tr>
-					<td><b>Recorded Date :</b> {{mortgage.iBP}}</td>
-          <td colspan="0.5"><b>Case No :</b> {{mortgage.iBP}}</td>
-					<td colspan="0.5"><b>Amount :</b> {{mortgage.amount}}</td>
+					<td><b>Recorded Date :</b> {{judgement.recordedDate}}</td>
+          <td><table>
+          <td colspan="0.5"><b>Case No :</b> {{judgement.caseNo}}</td>
+					<td colspan="0.5"><b>Judgement Amount :</b> {{judgement.judgementAmount}}</td></table>
+          </td>
 				</tr>
 				
 				<tr>
-					<td colspan="2"><b>Note :</b> {{mortgage.note}}</td>
+					<td colspan="2"><b>Comments :</b> {{judgement.comments}}</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
+
+  <div class="row-md-19">
+		<table class="table table-bordered table-sm" >
+			<thead class="bg-success">
+				<tr>
+					<th colspan="2">Tax Information</th>
+				</tr>
+			</thead>
+			<tbody class="bg-light">
+				<tr>
+					<td><b>Assesment Year :</b> {{data.tax.assesmentYear}}</td>
+					<td><b>Tax Year :</b> {{data.tax.taxYear}}</td>
+				</tr>
+				<tr>
+					<td><b>Land Value :</b> {{data.tax.landValue}}</td>
+					<td><b>Building Value :</b> {{data.tax.buildingValue}}</td>
+				</tr>
+				<tr>
+					<td><b>Total Value :</b> {{data.tax.totalValue}}</td>
+					<td><b>Exemption :</b> {{data.tax.Exemption}}</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+            <table>
+              <thead>
+                <td>Installment</td>
+                <td>Amount</td>
+                <td>Status</td>
+                <td>Paid/Due Date</td>
+              </thead>
+              <tbody>
+                <tr *ngFor="let installment of data.tax.installments">
+                  <td>{{installment.installment}}</td>
+                  <td>{{installment.amount}}</td>
+                  <td>{{installment.status}}</td>
+                  <td>{{installment.paidDueDate}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+  <div>
+    <table>
+      <tr><th class="mx-auto"></th></tr>
+      <tr><td>{{data.additionalInfo.multipleNames}}</td></tr>
+    </table>
+  </div>
 
 </div>
