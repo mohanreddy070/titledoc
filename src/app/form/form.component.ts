@@ -161,6 +161,7 @@ export class FormComponent implements OnInit {
 
 //print action
   print(){
+    this.db.addData(this.titleForm.value);
     this.ps.printDocument();
   }
 
