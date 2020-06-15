@@ -5,7 +5,8 @@ import { ReportComponent } from './report/report.component';
 import { PrintComponent} from './print/print.component';
 
 const routes: Routes = [
-  { path: '', component:  FormComponent},
+  { path: '', redirectTo:  '/form', pathMatch :'full'},
+  { path: 'form', component:  FormComponent},
   { path: 'result', component: ReportComponent },
    { path: 'print',
     outlet: 'print',

@@ -11,14 +11,14 @@ export class PrintService {
 
   printDocument() {
     this.isPrinting = true;
-    this.router.navigate(['/',{ outlets: { 'print': 'print' }}]);
+    this.router.navigate([{ outlets: { 'print': 'print' }}]);
   }
 
   onDataReady() {
     setTimeout(() => {
-      //window.print();
+      window.print();
       this.isPrinting = false;
-      //this.router.navigate([{ outlets: { 'print': null }}]);
+      this.router.navigate([{ outlets: { 'print': null }}]);
     });
   }
 }

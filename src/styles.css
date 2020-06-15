@@ -1,9 +1,6 @@
 /* Add application styles & imports to this file! */;
 
-div.card-header {
- font-size: large;
-}
-
-div.card {
-  margin-top: 10px
+@media print {
+  .isPrinting > * { display: none; }
+  .isPrinting app-report { display: block; }
 }
