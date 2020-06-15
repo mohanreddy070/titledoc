@@ -8,7 +8,7 @@ import {PrintService} from "../print.service";
   styleUrls: ['./report.component.css']
 })
 export class ReportComponent implements OnInit {
- data: any;
+ data: any = null;
 
   constructor(private db: DataService, private ps: PrintService) { }
 
