@@ -136,42 +136,36 @@
 		<table class="table table-bordered " >
 			<thead class="bg-success">
 				<tr>
-					<th colspan="2">Tax Information</th>
+					<th colspan="4">Tax Information</th>
 				</tr>
 			</thead>
 			<tbody class="bg-light">
 				<tr>
-					<td><b>Assesment Year :</b> {{data.tax.assesmentYear}}</td>
-					<td><b>Tax Year :</b> {{data.tax.taxYear}}</td>
+					<td colspan="2"><b>Assesment Year :</b> {{data.tax.assesmentYear}}</td>
+					<td colspan="2"><b>Tax Year :</b> {{data.tax.taxYear}}</td>
 				</tr>
 				<tr>
-					<td><b>Land Value :</b> {{data.tax.landValue}}</td>
-					<td><b>Building Value :</b> {{data.tax.buildingValue}}</td>
+					<td colspan="2"><b>Land Value :</b> {{data.tax.landValue}}</td>
+					<td colspan="2"><b>Building Value :</b> {{data.tax.buildingValue}}</td>
 				</tr>
 				<tr>
-					<td><b>Total Value :</b> {{data.tax.totalValue}}</td>
-					<td><b>Exemption :</b> {{data.tax.Exemption}}</td>
+					<td colspan="2"><b>Total Value :</b> {{data.tax.totalValue}}</td>
+					<td colspan="2"><b>Exemption :</b> {{data.tax.Exemption}}</td>
 				</tr>
 				<tr>
-					<td colspan="2">
-            <table>
-              <thead>
-                <td>Installment</td>
-                <td>Amount</td>
-                <td>Status</td>
-                <td>Paid/Due Date</td>
-              </thead>
-              <tbody>
-                <tr *ngFor="let installment of data.tax.installments">
-                  <td>{{installment.installment}}</td>
-                  <td>{{installment.amount}}</td>
-                  <td>{{installment.status}}</td>
-                  <td>{{installment.paidDueDate}}</td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
+          <th>Installment</th>
+          <th>Amount</th>
+          <th>Status</th>
+          <th>Paid/Due Date</th>
 				</tr>
+        <tr *ngFor="let installment of data.tax.installments">
+          <td>{{installment.installment}}</td>
+          <td>{{installment.amount}}</td>
+          <td>{{installment.status}}</td>
+          <td>{{installment.paidDueDate}}</td>
+        </tr>
+             
+				
 			</tbody>
 		</table>
 	</div>
@@ -179,7 +173,7 @@
   <div>
     <table class="table table-bordered">
       <tbody>
-      <tr><th class="bg-success">Multiple Names</th></tr>
+      <tr><th class="bg-success">Names Run</th></tr>
       <tr><td>{{data.additionalInfo.multipleNames}}</td></tr>
       </tbody>
     </table>
