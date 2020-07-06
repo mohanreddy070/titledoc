@@ -105,9 +105,9 @@ export class FormComponent implements OnInit {
 
   buildMortgage(): FormGroup{
     return this.fb.group({
+       mortgageType: ["", [Validators.required]],
         mortgagor: ["", [Validators.required]],
         mortgagee: ["", [Validators.required]],
-        grantor: ["", [Validators.required]],
         trustee: ["", [Validators.required]],
         iBP: ["", [Validators.required]],
         amount: ["", [Validators.required]],

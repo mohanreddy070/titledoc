@@ -3,11 +3,11 @@
 		<h1>Title Trails</h1>
 	</div>
 
-	<div >
+	<div class="p-3">
 		<form novalidate (ngSubmit)="save()" [formGroup]="titleForm">
 
 			<!-- Primary Information -->
-      <div class="card bg-default border border-success">
+      <div class="card bg-default border border-success my-2">
         <div class=" card-header bg-default">
           Property and Owner Information
         </div>
@@ -187,7 +187,7 @@
 
 
       <!-- Deed Information -->
-      <div formArrayName="deeds" class="card border border-success">
+      <div formArrayName="deeds" class="card border border-success my-2">
         
         <div [formGroupName] ="i" 
           *ngFor="let deed of deeds.controls; let i=index">
@@ -307,7 +307,7 @@
                     [title]="deeds.valid ? 'Add another deed' : 'Disabled until the existing deed data is valid'"
                     [disabled]="!deeds.valid"
                     (click)="addDeed()">
-              Add Another Deed
+              Add Deed
             </button>
         </div>
       </div>
@@ -315,15 +315,25 @@
 
 
       <!-- Mortagage Information -->
-      <div formArrayName="mortgages" class="card border border-success mb-3 bg-light">
+      <div formArrayName="mortgages" class="card border border-success my-2">
         
         <div [formGroupName] ="i" 
           *ngFor="let mortgage of mortgages.controls; let i=index">
           <div class="card-header bg-default" >
 		        Mortgage
 	        </div>
-          <div class="form-row mb-2">
-            
+          <div class="form-row mb-2 card-body">
+            <div class="col-md-3 form-group">
+              <label class="col-form-label "
+                for="mortgageType">Mortgage Type</label>
+              <input class="form-control form-control-sm"
+                id="mortgageType"
+                type="text"
+                placeholder="Mortgage Type"
+                formControlName="mortgageType"
+                />
+            </div>
+
             <div class="col-md-3 form-group">
               <label class="col-form-label"
                 for="mortgagor">Mortgagor</label>
@@ -344,18 +354,6 @@
                 type="text"
                 placeholder="Mortgagee"
                 formControlName="mortgagee"
-                />
-            </div>
-
-            
-            <div class="col-md-3 form-group">
-              <label class="col-form-label "
-                for="grantor">Grantor</label>
-              <input class="form-control form-control-sm"
-                id="grantor"
-                type="text"
-                placeholder="Grantor"
-                formControlName="grantor"
                 />
             </div>
 
@@ -442,14 +440,14 @@
 
 
        <!-- Judgement Information -->
-      <div formArrayName="judgements" class="card border border-success">
+      <div formArrayName="judgements" class="card border border-success my-2">
         
         <div [formGroupName] ="i" 
           *ngFor="let judgement of judgements.controls; let i=index">
           <div class="card-header bg-default" st>
 		        Judement#{{i+1}}
 	        </div>
-          <div class="form-row ">
+          <div class="form-row card-body">
             
             <div class="form-group col-md-4">
               <label class="col-form-label "
@@ -531,15 +529,17 @@
                 />
             </div>
 
+            <div class="form-group col-12">
+              <label class="col-form-label"
+                for="comments">Comments</label>
+              <textarea class="form-control form-control-sm"
+                id="comments"
+                formControlName="comments"
+                ></textarea>
+            </div>
+
           </div>
-          <div class="form-group">
-            <label class="col-md-1 row mb-2"
-              for="comments">Comments</label>
-            <textarea class="form-control form-control-sm"
-              id="comments"
-              formControlName="comments"
-              ></textarea>
-          </div>
+          
 
         </div>
         <div class="mx-auto">
@@ -555,7 +555,7 @@
 
 
       <!-- Tax Information -->
-      <div class="card border border-success mb-3">
+      <div class="card border border-success my-2">
         <div class="card-header bg-default" st>
 		      Tax
 	      </div>
